@@ -412,3 +412,96 @@ if main == 'Watches': ######
     if sub == 'Mens Wrist Watch' or sub == 'Womens Wrist Watch' or sub == 'Boys Watches' or sub == 'Girls Watches': ######
 
         st.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+if main == 'Appliances': ######
+
+    sub = st.radio('CHOOSE SUB CATEGORY :', ['Kitchen Appliances', 'Home Appliances', 'Washing Machines & Dryers', 'Cooktops & Ranges', 'Refrigerators & Freezers', 'Microwave Ovens', 'Air Conditioners', 'Heating Cooling & Air Quality'])
+
+
+    if sub == 'Kitchen Appliances': ######
+
+        root_cat = ['Coffee Machines & Grinders', 'Hand Blenders & Mixers', 'Electric Kettles', 'Fryers', 'Juicers', 'Rice Cookers', 'Food Processors', 'Toasters', 'Oven & Toaster Grills', 'Mixer Grinders', 'Induction Cooktops', 'Snack Maker', 'Sandwich Makers', 'Bread Maker', 'Electric Steamers', 'Microwave Ovens', 'Meat Grinders & Mincers', 'Choppers & Chippers', 'Milk Frothers', 'Waffle & Dessert Makers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Home Appliances': ######
+
+        root_cat = ['Irons & Steamers', 'Vacuum Cleaners', 'Water Dispensers & Purifiers', 'Dishwashers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Washing Machines & Dryers': ######
+
+        root_cat = ['Dryers', 'Fully Automatic Front Load', 'Semi Automatic Top Load', 'Fully Automatic Top Load']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Cooktops & Ranges': ######
+
+        root_cat = ['Cooking Range', 'Cooktop', 'Cooker Hood']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Refrigerators & Freezers': ######
+
+        root_cat = ['Single Door', 'Chest Freezer & Chiller', 'Double Door', 'Side by Side']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Microwave Ovens': ######
+
+        root_cat = ['Solo', 'Grill']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Air Conditioners': ######
+
+        root_cat = ['Split ACs', 'Window ACs']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Heating Cooling & Air Quality': ######
+
+        root_cat = ['Air Purifiers', 'Fans', 'Humidifiers', 'Air Coolers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
