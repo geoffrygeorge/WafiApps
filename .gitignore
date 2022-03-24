@@ -1,0 +1,5 @@
+# ignoring _pycache_
+#__pycache__
+
+#https://github.com/microsoft/vscode/issues/94835
+.vscode
