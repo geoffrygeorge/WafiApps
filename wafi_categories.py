@@ -16,7 +16,7 @@ st.markdown("""
     text-align: center;
     padding-top: 5px;
     font-size: calc(0.65em + 5vmin);
-    font-family: Montserrat;
+    font-family: Arial, sans-serif;
 }
 </style>
 """, unsafe_allow_html = True)
@@ -40,7 +40,7 @@ def root_cat_text():
     .small-font {
         text-align: center;
         font-size: 20px;
-        font-family: Montserrat;
+        font-family: Arial, sans-serif;
         font-weight: 500;
     }
     </style>
