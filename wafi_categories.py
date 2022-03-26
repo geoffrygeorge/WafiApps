@@ -34,27 +34,33 @@ st.markdown('<p></p>', unsafe_allow_html = True)
 
 
 # function to display root categories text
+
+if False: 
+    def root_cat_text():
+        col4.markdown("""
+
+        <style>
+        .small-font {
+            text-align: left;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        </style>
+        """, unsafe_allow_html = True)
+
+
+        col4.markdown('<p class="small-font">ROOT CATEGORIES</p>', unsafe_allow_html = True)
+
+
 def root_cat_text():
-    st.markdown("""
+    col4.subheader('ROOT CATEGORIES')
 
-    <style>
-    .small-font {
-        text-align: center;
-        font-size: 20px;
-        font-family: Arial, sans-serif;
-        font-weight: 500;
-    }
-    </style>
-    """, unsafe_allow_html = True)
-
-
-    st.markdown('<p class="small-font">ROOT CATEGORIES</p>', unsafe_allow_html = True)
-
-
+col1, col2, col3, col4 = st.columns([7,1,1,5])
 
 if main == 'Supermarket': ######
 
-    sub = st.radio('CHOOSE SUB CATEGORY :', ['Frozen Items', 'Beverages', 'Dairy & Eggs', 'Tea & Coffee', 'Cooking Ingredients', 'Organic', 'Tins Jars & Packets', 'Fresh Fruits & Vegetables', 'Chocolate & Confectionery','Fish & Meat', 'Rice Pasta & Pulses', 'Nuts Dates & Dried Fruits', 'Biscuits Crackers & Cakes', 'Chips Dips & Snacks', 'Breakfast Cereals', 'Condiments-Dressings & Marinades', 'Bakery', 'Household Cleaners', 'Jams Honey & Spreads', 'Salt & Sugar', 'Laundry', 'Home Baking & Desserts', 'Disposable Kitchenware', 'Tissues & Toilet Paper', 'Air Fresheners & Deodorizers', 'Shoe Care & Polish', 'Dishwashing Supplies', 'Papers Foils & Wraps', 'Protein', 'Barbecue', 'Insecticides'])
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Frozen Items', 'Beverages', 'Dairy & Eggs', 'Tea & Coffee', 'Cooking Ingredients', 'Organic', 'Tins Jars & Packets', 'Fresh Fruits & Vegetables', 'Chocolate & Confectionery','Fish & Meat', 'Rice Pasta & Pulses', 'Nuts Dates & Dried Fruits', 'Biscuits Crackers & Cakes', 'Chips Dips & Snacks', 'Breakfast Cereals', 'Condiments-Dressings & Marinades', 'Bakery', 'Household Cleaners', 'Jams Honey & Spreads', 'Salt & Sugar', 'Laundry', 'Home Baking & Desserts', 'Disposable Kitchenware', 'Tissues & Toilet Paper', 'Air Fresheners & Deodorizers', 'Shoe Care & Polish', 'Dishwashing Supplies', 'Papers Foils & Wraps', 'Protein', 'Barbecue', 'Insecticides'])
 
 
 
@@ -63,9 +69,10 @@ if main == 'Supermarket': ######
         root_cat = ['Frozen Chicken', 'Snacks & Meals', 'Ice Cream', 'Patties & Burger', 'Fries', 'Frozen Vegetables', 'Frozen Meat', 'Sausages', 'Frozen Fish & Seafood', 'Frozen Pizza', 'Chilled Desserts', 'Frozen Fruits']
 
         root_cat_text()
-
+        
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            
+            col4.write(root_cat[i])
 
 
 
@@ -76,7 +83,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -87,14 +94,14 @@ if main == 'Supermarket': ######
 
         for i in range(len(root_cat)):
             if root_cat[i] == 'Milk & Milk Products':
-                with st.expander('Milk & Milk Products'):
+                with col4.expander('Milk & Milk Products'):
                     st.write('Fresh Milk')
                     st.write('Almond Milk')
                     st.write('Flavored Milk')
                     st.write('Flavoured Milk')
                     st.write('Soya Milk')
             else:
-                st.write(root_cat[i])
+                col4.write(root_cat[i])
 
 
 
@@ -105,7 +112,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -116,7 +123,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -127,7 +134,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -138,7 +145,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -149,7 +156,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -160,7 +167,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -171,7 +178,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -182,7 +189,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
   
@@ -193,7 +200,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
     
@@ -204,7 +211,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -215,7 +222,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -226,7 +233,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -237,7 +244,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -248,7 +255,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -259,7 +266,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -270,7 +277,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -281,7 +288,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -292,7 +299,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -303,7 +310,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -314,7 +321,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -325,7 +332,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -336,7 +343,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -347,7 +354,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -358,7 +365,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -369,7 +376,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -380,7 +387,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -391,7 +398,7 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -402,23 +409,23 @@ if main == 'Supermarket': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
 if main == 'Watches': ######
 
-    sub = st.radio('CHOOSE SUB CATEGORY :', ['Mens Wrist Watch', 'Womens Wrist Watch', 'Boys Watches', 'Girls Watches'])
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Mens Wrist Watch', 'Womens Wrist Watch', 'Boys Watches', 'Girls Watches'])
 
     if sub == 'Mens Wrist Watch' or sub == 'Womens Wrist Watch' or sub == 'Boys Watches' or sub == 'Girls Watches': ######
 
-        st.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
 
 
 
 if main == 'Appliances': ######
 
-    sub = st.radio('CHOOSE SUB CATEGORY :', ['Kitchen Appliances', 'Home Appliances', 'Washing Machines & Dryers', 'Cooktops & Ranges', 'Refrigerators & Freezers', 'Microwave Ovens', 'Air Conditioners', 'Heating Cooling & Air Quality'])
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Kitchen Appliances', 'Home Appliances', 'Washing Machines & Dryers', 'Cooktops & Ranges', 'Refrigerators & Freezers', 'Microwave Ovens', 'Air Conditioners', 'Heating Cooling & Air Quality'])
 
 
 
@@ -429,7 +436,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -440,7 +447,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -451,7 +458,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -462,7 +469,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -473,7 +480,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -484,7 +491,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -495,7 +502,7 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -506,13 +513,13 @@ if main == 'Appliances': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
 if main == 'Kitchen & Dining': ######
 
-    sub = st.radio('CHOOSE SUB CATEGORY :', ['Cookware', 'Kitchen Tools', 'Serveware', 'Bakeware', 'Kitchen Storage & Containers', 'Dinner Sets'])
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Cookware', 'Kitchen Tools', 'Serveware', 'Bakeware', 'Kitchen Storage & Containers', 'Dinner Sets'])
 
 
     if sub == 'Cookware': ######
@@ -522,7 +529,7 @@ if main == 'Kitchen & Dining': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -533,7 +540,7 @@ if main == 'Kitchen & Dining': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -544,7 +551,7 @@ if main == 'Kitchen & Dining': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -555,7 +562,7 @@ if main == 'Kitchen & Dining': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -566,7 +573,7 @@ if main == 'Kitchen & Dining': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])   
+            col4.write(root_cat[i])   
 
 
 
@@ -577,13 +584,13 @@ if main == 'Kitchen & Dining': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i]) 
+            col4.write(root_cat[i]) 
 
 
 
 if main == 'Health & Beauty': ######
 
-    sub = st.radio('CHOOSE SUB CATEGORY :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming'])
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming'])
 
 
 
@@ -594,7 +601,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -605,7 +612,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])
+            col4.write(root_cat[i])
 
 
 
@@ -616,7 +623,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])       
+            col4.write(root_cat[i])       
 
 
 
@@ -627,7 +634,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])  
+            col4.write(root_cat[i])  
 
 
 
@@ -638,7 +645,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])  
+            col4.write(root_cat[i])  
 
 
 
@@ -649,7 +656,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])  
+            col4.write(root_cat[i])  
 
 
 
@@ -660,7 +667,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i]) 
+            col4.write(root_cat[i]) 
 
 
 
@@ -671,7 +678,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])      
+            col4.write(root_cat[i])      
 
 
             
@@ -682,7 +689,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])   
+            col4.write(root_cat[i])   
 
 
 
@@ -693,7 +700,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])   
+            col4.write(root_cat[i])   
 
 
 
@@ -704,7 +711,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])    
+            col4.write(root_cat[i])    
 
 
 
@@ -715,7 +722,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i])       
+            col4.write(root_cat[i])       
 
 
 
@@ -726,7 +733,7 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i]) 
+            col4.write(root_cat[i]) 
 
 
 
@@ -737,4 +744,4 @@ if main == 'Health & Beauty': ######
         root_cat_text()
 
         for i in range(len(root_cat)):
-            st.write(root_cat[i]) 
+            col4.write(root_cat[i]) 
