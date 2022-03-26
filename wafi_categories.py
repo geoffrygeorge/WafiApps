@@ -421,6 +421,7 @@ if main == 'Appliances': ######
     sub = st.radio('CHOOSE SUB CATEGORY :', ['Kitchen Appliances', 'Home Appliances', 'Washing Machines & Dryers', 'Cooktops & Ranges', 'Refrigerators & Freezers', 'Microwave Ovens', 'Air Conditioners', 'Heating Cooling & Air Quality'])
 
 
+
     if sub == 'Kitchen Appliances': ######
 
         root_cat = ['Coffee Machines & Grinders', 'Hand Blenders & Mixers', 'Electric Kettles', 'Fryers', 'Juicers', 'Rice Cookers', 'Food Processors', 'Toasters', 'Oven & Toaster Grills', 'Mixer Grinders', 'Induction Cooktops', 'Snack Maker', 'Sandwich Makers', 'Bread Maker', 'Electric Steamers', 'Microwave Ovens', 'Meat Grinders & Mincers', 'Choppers & Chippers', 'Milk Frothers', 'Waffle & Dessert Makers']
@@ -572,6 +573,166 @@ if main == 'Kitchen & Dining': ######
     if sub == 'Dinner Sets': ######
 
         root_cat = ['Opalware & Glass', 'Plates']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i]) 
+
+
+
+if main == 'Health & Beauty': ######
+
+    sub = st.radio('CHOOSE SUB CATEGORY :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming'])
+
+
+
+    if sub == 'Face': ######
+
+        root_cat = ['Foundation & Contour', 'Concealer & Corrector', 'Primer Makeup', 'Facial Serum', 'Blushes & Bronzers', 'Powder', 'Makeup Sets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Facial Skincare': ######
+
+        root_cat = ['Face Cream & Moisturizer', 'Cleanser Toner & Face Mask', 'Anti Wrinkle Skin Care', 'Cotton Wool', 'Face Wash & Scrub', 'Face Wipes']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Skin Care': ######
+
+        root_cat = ['Oil & Petroleum Jelly', 'Footcare & Handcare', 'Hand Sanitizers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])       
+
+
+
+    if sub == 'Lips': ######
+
+        root_cat = ['Lipstick', 'Lip Liner']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])  
+
+
+
+    if sub == 'Eyes': ######
+
+        root_cat = ['Eyeliner & Mascara', 'Eye Pencil & Brow Liner', 'Eyelash Treatment', 'Eye Shadow & Eye Makeup Kit']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])  
+
+
+
+    if sub == 'Hair Care': ######
+
+        root_cat = ['Hair Styling Accessories', 'Hair Treatment Serum & Oil', 'Shampoo', 'Conditioner', 'Hair Colourants', 'Hair Styling Creams & Lotions']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])  
+
+
+
+    if sub == 'Bath & Body': ######
+
+        root_cat = ['Body Wash & Shower Gel', 'Bath Accessories', 'Hand Wash & Soap', 'Talcum Powder']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i]) 
+
+
+
+    if sub == 'Oral Hygiene': ######
+
+        root_cat = ['Power Toothbrushes & Accessories', 'Tooth Brush & Floss', 'Toothpaste', 'Mouthwash']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])      
+
+
+            
+    if sub == 'Makeup Tools & Accessories': ######
+
+        root_cat = ['Brush Set']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])   
+
+
+
+    if sub == 'Medicine & Treatment': ######
+
+        root_cat = ['First Aid', 'Pain Relief', 'Heartburn & Indigestion', 'Sore Throat & Cough Medicine']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])   
+
+
+
+    if sub == 'Womens Toiletries': ######
+
+        root_cat = ['Womens Hair Removal', 'Womens Razors & Blades', 'Womens Deodarant & Bodyspray', 'Intimate Wash', 'Sanitary Napkins', 'Tampons & Panty Liners']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])    
+
+
+
+    if sub == 'Suncare & Travel': ######
+
+        root_cat = ['Suncare', 'Insect Repellent']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])       
+
+
+
+    if sub == 'Nail & Nail Polish': ######
+
+        root_cat = ['Nail Treatment', 'Nail Polish Remover', 'Manicure Kits']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i]) 
+
+
+
+    if sub == 'Mens Grooming': ######
+
+        root_cat = ['Mens Deodorants & Antiperspirants', 'Shaving Cream Foams & Gels', 'Mens Razor & Blade']
 
         root_cat_text()
 
