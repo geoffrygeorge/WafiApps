@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pd
+# import pandas as pd
 # import numpy as np
 
 # INITIAL PAGE LAYOUT SETTINGS
@@ -24,6 +24,7 @@ st.markdown("""
 
 st.markdown('<p class="big-font">WAFIAPPS CATEGORY VIEWER</p>', unsafe_allow_html = True)
 
+#st.sidebar.image("wafi_logo.png", width = 100)
 
 main = st.sidebar.radio('CHOOSE MAIN CATEGORY :', ['Supermarket', 'Watches', 'Appliances', 'Kitchen & Dining', 'Health & Beauty', 'Electronics', 'Computers & IT', 'Tools & DIY', 'Office Supplies', 'Mobiles & Tablets', 'Toys & Games', 'Perfumes & Fragrances', 'Fashion', 'Luggage & Travel Gear', 'Pharmacy', 'Baby Care', 'Cakes & Flowers', 'Home Decor & Furnishing', 'Musical Instruments', 'Gaming & Consoles', 'Diet & Nutrition', 'Furniture & Storage', 'Automotive', 'Home Improvement & Lighting', 'School Essential', 'Telecom', 'Pet Supplies'])
 
@@ -505,3 +506,74 @@ if main == 'Appliances': ######
 
         for i in range(len(root_cat)):
             st.write(root_cat[i])
+
+
+
+if main == 'Kitchen & Dining': ######
+
+    sub = st.radio('CHOOSE SUB CATEGORY :', ['Cookware', 'Kitchen Tools', 'Serveware', 'Bakeware', 'Kitchen Storage & Containers', 'Dinner Sets'])
+
+
+    if sub == 'Cookware': ######
+
+        root_cat = ['Frying Pans & Saucepans', 'Cookpots & Casseroles', 'Cookware Sets', 'Pressure Cookers', 'Kadhais & Woks', 'Tawas', 'Cooking Spoons', 'Tadka Pans']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Kitchen Tools': ######
+
+        root_cat = ['Knives', 'Utensils & Gadgets', 'Measures & Scales', 'Choppers & Chippers', 'Graters & Slicers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Serveware': ######
+
+        root_cat = ['Hotpots', 'Cups & Mugs', 'Serving Bowls', 'Cutlery', 'Serving Trays', 'Glassware & Drinkware']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Bakeware': ######
+
+        root_cat = ['Baking Tools', 'Cake & Muffin Moulds', 'Mixing Bowls', 'Serving Bowls']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])
+
+
+
+    if sub == 'Kitchen Storage & Containers': ######
+
+        root_cat = ['Water Bottles & Flasks', 'Jars & Containers', 'Food Savers', 'Countertop & Wall Organization', 'Lunch Boxes & Bags', 'Cooler']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i])   
+
+
+
+    if sub == 'Dinner Sets': ######
+
+        root_cat = ['Opalware & Glass', 'Plates']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            st.write(root_cat[i]) 
