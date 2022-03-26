@@ -16,7 +16,7 @@ st.markdown("""
     text-align: center;
     padding-top: 5px;
     font-size: calc(0.65em + 5vmin);
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
 }
 </style>
 """, unsafe_allow_html = True)
@@ -35,7 +35,7 @@ st.markdown('<p></p>', unsafe_allow_html = True)
 
 # function to display root categories text
 
-if False: 
+if False:
     def root_cat_text():
         col4.markdown("""
 
@@ -44,7 +44,7 @@ if False:
             text-align: left;
             font-size: 20px;
             font-family: sans-serif;
-            font-weight: bold;
+            font-weight: 500;
         }
         </style>
         """, unsafe_allow_html = True)
