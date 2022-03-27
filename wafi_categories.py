@@ -1771,3 +1771,13 @@ if main == 'Home Decor & Furnishing': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Musical Instruments': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Guitars', 'DJ Equipments', 'Violin - Ukulele & Oud', 'Pianos & Keyboards'])
+
+    if sub == 'Guitars' or sub == 'DJ Equipments' or sub == 'Violin - Ukulele & Oud' or sub == 'Pianos & Keyboards': ######
+
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
