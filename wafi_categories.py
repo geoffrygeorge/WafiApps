@@ -1980,3 +1980,20 @@ if main == 'School Essential': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Telecom': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Batelco'])
+
+
+
+    if sub == 'Batelco': ######
+
+        root_cat = ['Mobile & Data', 'Home Broadband']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
