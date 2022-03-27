@@ -1566,3 +1566,86 @@ if main == 'Pharmacy': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Baby Care': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Infant Milk & Food', 'Bottle Feeding', 'Baby Medical & Health Care', 'Bathing', 'Weaning & Toddler Feeding', 'Diapering', 'Baby Oral Care'])
+
+
+
+    if sub == 'Infant Milk & Food': ######
+
+        root_cat = ['Infant Milk', 'Baby Fruits & Vegetables', 'Baby Cereals', 'Baby Snacks']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Bottle Feeding': ######
+
+        root_cat = ['Bottles', 'Bottle Nipples', 'Cleaning Accessories']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Baby Medical & Health Care': ######
+
+        root_cat = ['Baby Thermometer']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Bathing': ######
+
+        root_cat = ['Baby Soaps & Cleansers', 'Baby Body Wash', 'Baby Shampoo']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Weaning & Toddler Feeding': ######
+
+        root_cat = ['Forks Knives & Spoons']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Diapering': ######
+
+        root_cat = ['Size 5 (11 to 25kg)', 'Size 6 (16kg +)']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Baby Oral Care': ######
+
+        root_cat = ['Baby Toothbrushes']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
