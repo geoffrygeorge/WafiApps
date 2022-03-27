@@ -1407,3 +1407,78 @@ if main == 'Perfumes & Fragrances': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Fashion': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Womens Fashion', 'Mens Fashion', 'Kids & Baby Fashion'])
+
+
+
+    if sub == 'Womens Fashion': ######
+
+        root_cat = ['Clothing', 'Eyewear', 'Accessories', 'Bags & Wallets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            if root_cat[i] == 'Clothing':
+                with col4.expander('Clothing'):
+                    st.write('Traditional Arabian ▶ Abayas')
+                    st.write('Dresses')
+                    st.write('Tops Tees & Blouses')
+                    st.write('Hoodies')
+
+            elif root_cat[i] == 'Eyewear':
+                    with col4.expander('Eyewear'):
+                        st.write('Sunglasses')
+
+
+            elif root_cat[i] == 'Bags & Wallets':
+                    with col4.expander('Bags & Wallets'):
+                        st.write('Handbags')
+
+            else:
+                col4.write(root_cat[i])
+
+
+
+    if sub == 'Mens Fashion': ######
+
+        root_cat = ['Mens Hats & Caps', 'Clothing', 'Accessories']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            if root_cat[i] == 'Mens Hats & Caps':
+                with col4.expander('Mens Hats & Caps'):
+                    st.write('Mens Baseball Cap')
+                    st.write('Snap Back Cap')
+
+       
+            elif root_cat[i] == 'Clothing':
+                with col4.expander('Clothing'):
+                    st.write('Top Tees & Shirts')
+                    st.write('Jackets')
+                    st.write('Hoodies')
+
+            else:
+                col4.write(root_cat[i])
+
+
+
+    if sub == 'Kids & Baby Fashion': ######
+
+        root_cat = ['Boys']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            if root_cat[i] == 'Boys':
+                with col4.expander('Boys'):
+                    st.write('Tops & Tees')
+                    st.write('Boys Cap')
+
+            else:
+                col4.write(root_cat[i])
