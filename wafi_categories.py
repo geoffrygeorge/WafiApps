@@ -1791,3 +1791,53 @@ if main == 'Gaming & Consoles': ######
     if sub == 'Gaming Mice' or sub == 'Gaming Components' or sub == 'Gaming Headset' or sub == 'Gaming Chairs' or sub == 'Gaming Keyboard' or sub == 'Controllers-Joysticks & Accessories' or sub == 'PS4 Games' or sub == 'Gaming Monitors' or sub == 'Gaming Consoles' or sub == 'Gaming Desktop': ######
 
         col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+if main == 'Diet & Nutrition': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Vitamins & Supplements', 'Protein', 'Weight Management', 'Herbs & Natural Solutions'])
+
+
+
+    if sub == 'Vitamins & Supplements': ######
+
+        root_cat = ['Multivitamins', 'Vitamins A-Z', 'Fish Oil & Omegas', 'Nutritional Supplements', 'Specialty Supplements', 'Antioxidants', 'Joint Support']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Protein': ######
+
+        root_cat = ['Protein Drinks', 'Meal Replacements']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Weight Management': ######
+
+        root_cat = ['Fat Burners & Thermogenics']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Herbs & Natural Solutions': ######
+
+        root_cat = ['Natural Solutions']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
