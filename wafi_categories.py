@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 # import pandas as pd
 # import numpy as np
 
@@ -14,8 +15,8 @@ st.markdown("""
 <style>
 .big-font {
     text-align: center;
-    padding-top: 5px;
-    font-size: calc(0.65em + 5vmin);
+    padding-top: 0.5px;
+    font-size: calc(0.70em + 4.5vmin);
     font-family: sans-serif;
 }
 </style>
@@ -28,8 +29,6 @@ st.markdown('<p class="big-font">WAFIAPPS CATEGORY VIEWER</p>', unsafe_allow_htm
 
 main = st.sidebar.radio('CHOOSE MAIN CATEGORY :', ['Supermarket', 'Watches', 'Appliances', 'Kitchen & Dining', 'Health & Beauty', 'Electronics', 'Computers & IT', 'Tools & DIY', 'Office Supplies', 'Mobiles & Tablets', 'Toys & Games', 'Perfumes & Fragrances', 'Fashion', 'Luggage & Travel Gear', 'Pharmacy', 'Baby Care', 'Cakes & Flowers', 'Home Decor & Furnishing', 'Musical Instruments', 'Gaming & Consoles', 'Diet & Nutrition', 'Furniture & Storage', 'Automotive', 'Home Improvement & Lighting', 'School Essential', 'Telecom', 'Pet Supplies'])
 
-st.markdown('<p></p>', unsafe_allow_html = True)
-st.markdown('<p></p>', unsafe_allow_html = True)
 st.markdown('<p></p>', unsafe_allow_html = True)
 
 
@@ -52,11 +51,20 @@ if False:
 
         col4.markdown('<p class="small-font">ROOT CATEGORIES</p>', unsafe_allow_html = True)
 
+# defining columns for structure
+col1, col2, col3, col4 = st.columns([7,1,1,5])
+
 
 def root_cat_text():
+
+    with col4:
+
+        with st.spinner(text = "Please Wait"):
+
+            time.sleep(0.5)
+
     col4.subheader('ROOT CATEGORIES')
 
-col1, col2, col3, col4 = st.columns([7,1,1,5])
 
 if main == 'Supermarket': ######
 
@@ -994,3 +1002,97 @@ if main == 'Computers & IT': ######
     if sub == 'Components & Parts': ######
 
         col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+if main == 'Tools & DIY': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Hand Tools', 'Power Tools', 'Safety & Security', 'Professional Cleaning Products', 'Garden Tools', 'Hardware', 'Painting Supplies & Wall Treatment', 'Power Solutions'])
+
+
+
+    if sub == 'Hand Tools': ######
+
+        root_cat = ['Tool Sets', 'Screw Drivers', 'Measure & Layout Tools', 'Multi Tools', 'Pliers', 'Hammers', 'Tool Boxes', 'Cutting Tools', 'Chisels', 'Wrenchs', 'Saws']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+        
+    if sub == 'Power Tools': ######
+
+        root_cat = ['Tool Sets', 'Sawing Tools', 'Jig Saws & Blades', 'Cordless Drill', 'Drilling', 'Sanding Tools', 'Planers', 'Cutting Tools', 'Pneumatic Tools', 'Routers', 'Staplers', 'Grinding Tools', 'Rotary Hammers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Safety & Security': ######
+
+        root_cat = ['Eye Protection', 'Safety Shoes', 'Head Protection', 'Hand & Arm Protection', 'Ear Protection']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Professional Cleaning Products': ######
+
+        root_cat = ['Pressure Washers', 'Pro Vacuum Cleaners', 'Air Blowers', 'Steam Cleaners']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Garden Tools': ######
+
+        root_cat = ['Lawn Movers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Hardware': ######
+
+        root_cat = ['Adhesives & Sealers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Painting Supplies & Wall Treatment': ######
+
+        root_cat = ['Paint Sprayers', 'Polishers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Power Solutions': ######
+
+        root_cat = ['Power Detectors']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
