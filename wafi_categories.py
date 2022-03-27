@@ -1649,3 +1649,64 @@ if main == 'Baby Care': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Cakes & Flowers': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Fresh Flower Arrangement', 'Cakes', 'Flowers', 'Combos', 'Plants'])
+
+
+
+    if sub == 'Fresh Flower Arrangement': ######
+
+        root_cat = ['Flower Bouquet', 'Vase Arrangement', 'Flowers in Sleeve']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Cakes': ######
+
+        root_cat = ['Cup Cakes', 'Frosting Cakes', 'Any Occassion', 'Cake Slices', 'Cake Shake', 'Designer Cakes', 'Donut']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Flowers': ######
+
+        root_cat = ['Roses']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Combos': ######
+
+        root_cat = ['Flowers & Chocolate']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Plants': ######
+
+        root_cat = ['Flowering Plants', 'Money Plants']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
