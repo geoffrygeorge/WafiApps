@@ -1482,3 +1482,13 @@ if main == 'Fashion': ######
 
             else:
                 col4.write(root_cat[i])
+
+
+
+if main == 'Luggage & Travel Gear': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Backpacks', 'Soft Trolley Bags', 'Hard Trolley Bags', 'Business & Laptop Bags', 'Duffel Bags', 'Cabin Baggage', 'Kids Bags', 'Luggage Accessories', 'Messenger Bags', 'Travel Plugs & Adapters'])
+    
+    if sub == 'Backpacks' or sub == 'Soft Trolley Bags' or sub == 'Hard Trolley Bags' or sub == 'Business & Laptop Bags' or sub == 'Duffel Bags' or sub == 'Cabin Baggage' or sub == 'Kids Bags' or sub == 'Luggage Accessories' or sub == 'Messenger Bags' or sub == 'Travel Plugs & Adapters': ######
+
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
