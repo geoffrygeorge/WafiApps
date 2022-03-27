@@ -1903,3 +1903,13 @@ if main == 'Furniture & Storage': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Automotive': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Car Mobile Accessories', 'Car Services', 'Tires & Wheels'])
+
+    if sub == 'Car Mobile Accessories' or sub == 'Car Services' or sub == 'Tires & Wheels': ######
+
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
