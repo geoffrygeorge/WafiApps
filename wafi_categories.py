@@ -745,3 +745,130 @@ if main == 'Health & Beauty': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i]) 
+
+
+
+if main == 'Electronics': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Personal Care for Women', 'Headphones & Earphones', 'Personal Care for Men', 'Speakers', 'Wearable Technology', 'Cameras & Accessories', 'Health Care Appliances', 'Smart Home & Office', 'Televisions', 'Telephones', 'Audio & Video'])
+
+
+
+    if sub == 'Personal Care for Women': ######
+
+        root_cat = ['Epilators', 'Hair Straightener', 'Hair Curlers & Stylers', 'Hair Dryer', 'Sauna & Spa']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Headphones & Earphones': ######
+
+        root_cat = ['Earphones', 'Headphones', 'Headsets with Mic']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Personal Care for Men': ######
+
+        root_cat = ['Trimmers & Clippers', 'Electric Shavers', 'Grooming Kit']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Speakers': ######
+
+        root_cat = ['Bluetooth Speakers', 'Portable Speakers & Docks', 'Sound Bars', 'Subwoofers', 'Smart Speakers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Wearable Technology': ######
+
+        root_cat = ['Smart Watch', 'Activity Trackers', 'Arm & Wristbands', 'Apple Watch']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Cameras & Accessories': ######
+
+        root_cat = ['Instant Film Cameras', 'Lenses & Accessories', 'DSLR Cameras', 'Action Cameras']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Health Care Appliances': ######
+
+        root_cat = ['Health Massagers', 'Weighing Scales', 'BP Monitors']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Smart Home & Office': ######
+
+        root_cat = ['CCTV Cameras & Accessories', 'Intercom Systems']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Televisions': ######
+
+        root_cat = ['Cables & Accessories', 'Smart TV', 'Ultra HD TV']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Telephones': ######
+
+        root_cat = ['Landphones', 'Telephone Accessories']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Audio & Video': ######
+
+        root_cat = ['Audio & Video Accessories', 'Projectors', 'Hi-Fi & Home Audio', 'Home Theatre Systems', 'Set-Top Boxes']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
