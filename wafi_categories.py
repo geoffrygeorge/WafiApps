@@ -1346,3 +1346,64 @@ if main == 'Toys & Games': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Perfumes & Fragrances': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ["Arabic Perfumes", "Men's Perfume", "Women's Perfume", "Unisex Perfumes", "Fragrance Sets"])
+
+
+
+    if sub == "Arabic Perfumes": ######
+
+        root_cat = ["Unisex Arabic Perfumes", "Women's Eau de Parfum", "Men's Eau de Parfum", "Oudh", "Perfume Oils", "Bakhoor", "Athar"]
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == "Men's Perfume": ######
+
+        root_cat = ["Eau de Toilette", "Eau de Parfum"]
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == "Women's Perfume": ######
+
+        root_cat = ["Eau de Parfum", "Eau de Toilette"]
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == "Unisex Perfumes": ######
+
+        root_cat = ["Eau de Parfum", "Eau de Toilette"]
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == "Fragrance Sets": ######
+
+        root_cat = ["Women Fragrance Gift Set", "Men Fragrance Gift Set"]
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
