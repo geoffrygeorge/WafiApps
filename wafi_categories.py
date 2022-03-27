@@ -57,13 +57,13 @@ col1, col2, col3, col4 = st.columns([7,1,1,5])
 
 def root_cat_text():
 
+    col4.subheader('ROOT CATEGORIES')
+
     with col4:
 
         with st.spinner(text = "Please Wait"):
 
             time.sleep(0.5)
-
-    col4.subheader('ROOT CATEGORIES')
 
 
 if main == 'Supermarket': ######
@@ -1170,6 +1170,177 @@ if main == 'Mobiles & Tablets': ######
     if sub == 'Tablets & iPad': ######
 
         root_cat = ['Huawei', 'Alcatel', 'Lenovo']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+if main == 'Toys & Games': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Toy Figures & Playsets', 'Dolls & Accessories', 'Games & Accessories', 'Hobbies', 'Sports & Outdoor Play', 'Play Vehicles', 'Dress Up & Pretend Play', 'Learning & Education', 'Stuffed Animals & Plush Toys', 'Puzzles', 'Tricycles & Scooters', 'Arts & Crafts', 'Baby & Toddler Toys', 'Building Toys', 'Party Supplies'])
+
+
+
+    if sub == 'Toy Figures & Playsets': ######
+
+        root_cat = ['Action Figures']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Dolls & Accessories': ######
+
+        root_cat = ['Dolls', 'Doll Accessories', 'Doll House Accessories', 'Playsets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Games & Accessories': ######
+
+        root_cat = ['Board Games', 'Card Games', 'Floor Games', 'Stacking Games', 'Arcade & Table Games', 'Tile Games']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Hobbies': ######
+
+        root_cat = ['Collecting', 'Pre-built Display Models', 'Robotics']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Sports & Outdoor Play': ######
+
+        root_cat = ['Blasters & Foam Play', 'Trampoline & Accessories', 'Play Sets & Playground Equipments']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Play Vehicles': ######
+
+        root_cat = ['Toy Vehicles']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Dress Up & Pretend Play': ######
+
+        root_cat = ['Pretend Play']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Learning & Education': ######
+
+        root_cat = ['Science Kits & Toys']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Stuffed Animals & Plush Toys': ######
+
+        root_cat = ['Plush Figures', 'Teddy Bears & Stuffed Animals']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Puzzles': ######
+
+        root_cat = ['Jigsaw Puzzles']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Tricycles & Scooters': ######
+
+        root_cat = ['Scooters & Accessories']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Arts & Crafts': ######
+
+        root_cat = ['Craft Kits']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Baby & Toddler Toys': ######
+
+        root_cat = ['Musical Toys', 'Sorting & Stacking Toys']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Building Toys': ######
+
+        root_cat = ['Building Sets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Party Supplies': ######
+
+        root_cat = ['Balloons']
 
         root_cat_text()
 
