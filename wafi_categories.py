@@ -1489,6 +1489,80 @@ if main == 'Luggage & Travel Gear': ######
 
     sub = col1.radio('CHOOSE SUB CATEGORY :', ['Backpacks', 'Soft Trolley Bags', 'Hard Trolley Bags', 'Business & Laptop Bags', 'Duffel Bags', 'Cabin Baggage', 'Kids Bags', 'Luggage Accessories', 'Messenger Bags', 'Travel Plugs & Adapters'])
     
+
+
     if sub == 'Backpacks' or sub == 'Soft Trolley Bags' or sub == 'Hard Trolley Bags' or sub == 'Business & Laptop Bags' or sub == 'Duffel Bags' or sub == 'Cabin Baggage' or sub == 'Kids Bags' or sub == 'Luggage Accessories' or sub == 'Messenger Bags' or sub == 'Travel Plugs & Adapters': ######
 
         col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+if main == 'Pharmacy': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Braces Splints & Supports', 'Bed Pillows & Positioners', 'Face Mask', 'Pain Relief Medications & Treatments', 'Walkers Rollators & Accessories', 'Home Tests'])
+
+
+
+    if sub == 'Braces Splints & Supports': ######
+
+        root_cat = ['Leg & Foot Supports', 'Arm Hand & Finger Supports', 'Back Neck & Shoulder Supports', 'Hip & Waist Supports', 'Athletic Tapes & Wraps', 'Chest Supports']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Bed Pillows & Positioners': ######
+
+        root_cat = ['Neck & Cervical Pillows', 'Contoured Support Pillows', 'Bed Pillows']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Face Mask': ######
+
+        root_cat = ['Surgical Face Mask']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Pain Relief Medications & Treatments': ######
+
+        root_cat = ['Hot & Cold Therapies']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Walkers Rollators & Accessories': ######
+
+        root_cat = ['Standard Walkers', 'Rolling Walkers', 'Wheelchairs']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Home Tests': ######
+
+        root_cat = ['Pregnancy Tests']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
