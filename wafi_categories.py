@@ -872,3 +872,125 @@ if main == 'Electronics': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Computers & IT': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Computer Cables & Connectors', 'Networking Devices', 'Mouses & Keyboards', 'Laptops', 'Storage Devices', 'Computer AV Accessories', 'Monitors', 'Printers & Scanners', 'Toners & Cartridges', 'Softwares', 'Components & Parts'])
+
+
+
+    if sub == 'Computer Cables & Connectors': ######
+
+        root_cat = ['HDMI Cables', 'USB Cables', 'USB Hubs', 'Adapters', 'Ethernet Cables', 'SATA Cables']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Networking Devices': ######
+
+        root_cat = ['Routers', 'Network Adapters']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Mouses & Keyboards': ######
+
+        root_cat = ['Mice', 'Keyboard & Mice Combos', 'Keyboards', 'Mouse Pads & Wrist Rests']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Laptops': ######
+
+        root_cat = ['Laptop', 'Business Laptops', 'MS Surface']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Storage Devices': ######
+
+        root_cat = ['External Data Storage', 'Internal Data Storage', 'Flash Drives']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Computer AV Accessories': ######
+
+        root_cat = ['Webcams & Voip', 'Computer Headsets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Monitors': ######
+
+        root_cat = ['Monitor Accessories', 'Projectors']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Printers & Scanners': ######
+
+        root_cat = ['Ink Tank Printers', 'Inkjet Printers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Toners & Cartridges': ######
+
+        root_cat = ['Ink Cartridges']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Softwares': ######
+
+        root_cat = ['Operating Systems']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Components & Parts': ######
+
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
