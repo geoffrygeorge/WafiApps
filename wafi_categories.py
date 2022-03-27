@@ -1913,3 +1913,42 @@ if main == 'Automotive': ######
     if sub == 'Car Mobile Accessories' or sub == 'Car Services' or sub == 'Tires & Wheels': ######
 
         col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+if main == 'Home Improvement & Lighting': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Functional Lighting', 'Electricals', 'Safes & Security'])
+
+
+
+    if sub == 'Functional Lighting': ######
+
+        root_cat = ['Desk Lights & Lamps']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Electricals': ######
+
+        root_cat = ['Cables']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Safes & Security': ######
+
+        root_cat = ['Video Door Phones']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
