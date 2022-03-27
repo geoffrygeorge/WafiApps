@@ -1952,3 +1952,31 @@ if main == 'Home Improvement & Lighting': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'School Essential': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Backpack & Storages', 'Calculator'])
+
+
+
+    if sub == 'Backpack & Storages': ######
+
+        root_cat = ['School Backpack', 'Pencil Case & Pouch', 'Lunch Box & Bag']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Calculator': ######
+
+        root_cat = ['Scientific Calculator']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
