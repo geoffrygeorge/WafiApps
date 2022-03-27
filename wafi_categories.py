@@ -1710,3 +1710,64 @@ if main == 'Cakes & Flowers': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Home Decor & Furnishing': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Wall Decor', 'Home Decor', 'Kitchen Linen', 'Bathroom Linen', 'Bedroom Linen'])
+
+
+
+    if sub == 'Wall Decor': ######
+
+        root_cat = ['Wall Decor & Hanging', 'Clocks']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Home Decor': ######
+
+        root_cat = ['Alarm Clocks']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Kitchen Linen': ######
+
+        root_cat = ['Oven Gloves', 'Aprons']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Bathroom Linen': ######
+
+        root_cat = ['Towel Sets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Bedroom Linen': ######
+
+        root_cat = ['Bed Pillows']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
