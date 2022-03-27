@@ -1096,3 +1096,82 @@ if main == 'Tools & DIY': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Office Supplies': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Office Pantry', 'Office Cleaning', 'Office Basics', 'Paper'])
+
+
+
+    if sub == 'Office Pantry': ######
+
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+    if sub == 'Office Cleaning': ######
+
+        col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+    if sub == 'Office Basics': ######
+
+        root_cat = ['Battery', 'Scissors']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Paper': ######
+
+        root_cat = ['Copy Paper', 'Other Paper']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+if main == 'Mobiles & Tablets': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Mobile Accessories', 'Mobile Phones', 'Tablets & iPad'])
+
+
+
+    if sub == 'Mobile Accessories': ######
+
+        root_cat = ['Mobile Cables', 'Mobile Chargers', 'Mobile Cases & Covers', 'Power Banks', 'Mobile Holders', 'Mobile Screen Protectors', 'SD Cards', 'Selfie Stick']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Mobile Phones': ######
+
+        root_cat = ['Nokia', 'Samsung', 'Huawei', 'iPhone', 'OnePlus']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Tablets & iPad': ######
+
+        root_cat = ['Huawei', 'Alcatel', 'Lenovo']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
