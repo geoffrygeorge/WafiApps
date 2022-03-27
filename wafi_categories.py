@@ -1997,3 +1997,47 @@ if main == 'Telecom': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Pet Supplies': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Cat Food', 'Cat Care & Accessories', 'Dog Care & Accessories', 'Dog Food'])
+
+
+
+    if sub == 'Cat Food': ######
+
+        root_cat = ['Dry Cat Food Adult', 'Wet Cat Food']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Cat Care & Accessories': ######
+
+        if sub == 'Cat Care & Accessories': ######
+            
+            col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+    if sub == 'Dog Care & Accessories': ######
+
+        if sub == 'Dog Care & Accessories': ######
+            
+            col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+
+
+    if sub == 'Dog Food': ######
+
+        root_cat = ['Dog Treats & Chews']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
