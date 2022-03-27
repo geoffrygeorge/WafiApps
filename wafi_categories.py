@@ -1841,3 +1841,65 @@ if main == 'Diet & Nutrition': ######
 
         for i in range(len(root_cat)):
             col4.write(root_cat[i])
+
+
+
+if main == 'Furniture & Storage': ######
+
+    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Bathroom Storage & Organiser', 'Bedroom', 'Storage & Organisation', 'Living Room', 'Kitchen & Dining'])
+
+
+
+    if sub == 'Bathroom Storage & Organiser': ######
+
+        root_cat = ['Soap Dishes', 'Bath Organizers', 'Toothbrush Holders', 'Toilet Brush Holders', 'Toilet Paper Holders']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+
+    if sub == 'Bedroom': ######
+
+        root_cat = ['Tv Stand & Media Centers', 'Chest of Drawers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Storage & Organisation': ######
+
+        root_cat = ['Ironing Boards', 'Racks Shelves & Drawers']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Living Room': ######
+
+        root_cat = ['Center Tables']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
+
+
+
+    if sub == 'Kitchen & Dining': ######
+
+        root_cat = ['Kitchen Cabinets']
+
+        root_cat_text()
+
+        for i in range(len(root_cat)):
+            col4.write(root_cat[i])
