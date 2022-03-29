@@ -1,12 +1,16 @@
 import streamlit as st
 import time
+from PIL import Image
 # import pandas as pd
 # import numpy as np
 
 # INITIAL PAGE LAYOUT SETTINGS
+
+favicon_img = Image.open("wafi_favicon.ico")
 st.set_page_config(
         page_title = "WafiApps Categories",
         initial_sidebar_state = "auto",
+        page_icon = favicon_img,
         layout = "centered"
         )
 
@@ -18,6 +22,7 @@ st.markdown("""
     padding-top: 0.5px;
     font-size: calc(0.70em + 4.5vmin);
     font-family: sans-serif;
+    font-weight: bold;
 }
 </style>
 """, unsafe_allow_html = True)
