@@ -27,7 +27,9 @@ st.markdown('<p class="big-font">WAFIAPPS CATEGORY VIEWER</p>', unsafe_allow_htm
 
 #st.sidebar.image("wafi_logo.png", width = 100)
 
-main = st.sidebar.radio('CHOOSE MAIN CATEGORY :', ['Supermarket', 'Watches', 'Appliances', 'Kitchen & Dining', 'Health & Beauty', 'Electronics', 'Computers & IT', 'Tools & DIY', 'Office Supplies', 'Mobiles & Tablets', 'Toys & Games', 'Perfumes & Fragrances', 'Fashion', 'Luggage & Travel Gear', 'Pharmacy', 'Baby Care', 'Cakes & Flowers', 'Home Decor & Furnishing', 'Musical Instruments', 'Gaming & Consoles', 'Diet & Nutrition', 'Furniture & Storage', 'Automotive', 'Home Improvement & Lighting', 'School Essential', 'Telecom', 'Pet Supplies'])
+st.sidebar.header('MAIN CATEGORIES')
+
+main = st.sidebar.radio('Choose Main Category :', ['Supermarket', 'Watches', 'Appliances', 'Kitchen & Dining', 'Health & Beauty', 'Electronics', 'Computers & IT', 'Tools & DIY', 'Office Supplies', 'Mobiles & Tablets', 'Toys & Games', 'Perfumes & Fragrances', 'Fashion', 'Luggage & Travel Gear', 'Pharmacy', 'Baby Care', 'Cakes & Flowers', 'Home Decor & Furnishing', 'Musical Instruments', 'Gaming & Consoles', 'Diet & Nutrition', 'Furniture & Storage', 'Automotive', 'Home Improvement & Lighting', 'School Essential', 'Telecom', 'Pet Supplies'])
 
 st.markdown('<p></p>', unsafe_allow_html = True)
 
@@ -66,9 +68,16 @@ def root_cat_text():
             time.sleep(0.5)
 
 
+def sub_cat_text():
+
+    col1.subheader('SUB CATEGORIES')
+
+
 if main == 'Supermarket': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Frozen Items', 'Beverages', 'Dairy & Eggs', 'Tea & Coffee', 'Cooking Ingredients', 'Organic', 'Tins Jars & Packets', 'Fresh Fruits & Vegetables', 'Chocolate & Confectionery','Fish & Meat', 'Rice Pasta & Pulses', 'Nuts Dates & Dried Fruits', 'Biscuits Crackers & Cakes', 'Chips Dips & Snacks', 'Breakfast Cereals', 'Condiments-Dressings & Marinades', 'Bakery', 'Household Cleaners', 'Jams Honey & Spreads', 'Salt & Sugar', 'Laundry', 'Home Baking & Desserts', 'Disposable Kitchenware', 'Tissues & Toilet Paper', 'Air Fresheners & Deodorizers', 'Shoe Care & Polish', 'Dishwashing Supplies', 'Papers Foils & Wraps', 'Protein', 'Barbecue', 'Insecticides'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Frozen Items', 'Beverages', 'Dairy & Eggs', 'Tea & Coffee', 'Cooking Ingredients', 'Organic', 'Tins Jars & Packets', 'Fresh Fruits & Vegetables', 'Chocolate & Confectionery','Fish & Meat', 'Rice Pasta & Pulses', 'Nuts Dates & Dried Fruits', 'Biscuits Crackers & Cakes', 'Chips Dips & Snacks', 'Breakfast Cereals', 'Condiments-Dressings & Marinades', 'Bakery', 'Household Cleaners', 'Jams Honey & Spreads', 'Salt & Sugar', 'Laundry', 'Home Baking & Desserts', 'Disposable Kitchenware', 'Tissues & Toilet Paper', 'Air Fresheners & Deodorizers', 'Shoe Care & Polish', 'Dishwashing Supplies', 'Papers Foils & Wraps', 'Protein', 'Barbecue', 'Insecticides'])
 
 
 
@@ -423,7 +432,9 @@ if main == 'Supermarket': ######
 
 if main == 'Watches': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Mens Wrist Watch', 'Womens Wrist Watch', 'Boys Watches', 'Girls Watches'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Mens Wrist Watch', 'Womens Wrist Watch', 'Boys Watches', 'Girls Watches'])
 
     if sub == 'Mens Wrist Watch' or sub == 'Womens Wrist Watch' or sub == 'Boys Watches' or sub == 'Girls Watches': ######
 
@@ -433,7 +444,9 @@ if main == 'Watches': ######
 
 if main == 'Appliances': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Kitchen Appliances', 'Home Appliances', 'Washing Machines & Dryers', 'Cooktops & Ranges', 'Refrigerators & Freezers', 'Microwave Ovens', 'Air Conditioners', 'Heating Cooling & Air Quality'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Kitchen Appliances', 'Home Appliances', 'Washing Machines & Dryers', 'Cooktops & Ranges', 'Refrigerators & Freezers', 'Microwave Ovens', 'Air Conditioners', 'Heating Cooling & Air Quality'])
 
 
 
@@ -527,7 +540,9 @@ if main == 'Appliances': ######
 
 if main == 'Kitchen & Dining': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Cookware', 'Kitchen Tools', 'Serveware', 'Bakeware', 'Kitchen Storage & Containers', 'Dinner Sets'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Cookware', 'Kitchen Tools', 'Serveware', 'Bakeware', 'Kitchen Storage & Containers', 'Dinner Sets'])
 
 
     if sub == 'Cookware': ######
@@ -598,7 +613,9 @@ if main == 'Kitchen & Dining': ######
 
 if main == 'Health & Beauty': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming'])
 
 
 
@@ -758,7 +775,9 @@ if main == 'Health & Beauty': ######
 
 if main == 'Electronics': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Personal Care for Women', 'Headphones & Earphones', 'Personal Care for Men', 'Speakers', 'Wearable Technology', 'Cameras & Accessories', 'Health Care Appliances', 'Smart Home & Office', 'Televisions', 'Telephones', 'Audio & Video'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Personal Care for Women', 'Headphones & Earphones', 'Personal Care for Men', 'Speakers', 'Wearable Technology', 'Cameras & Accessories', 'Health Care Appliances', 'Smart Home & Office', 'Televisions', 'Telephones', 'Audio & Video'])
 
 
 
@@ -885,7 +904,9 @@ if main == 'Electronics': ######
 
 if main == 'Computers & IT': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Computer Cables & Connectors', 'Networking Devices', 'Mouses & Keyboards', 'Laptops', 'Storage Devices', 'Computer AV Accessories', 'Monitors', 'Printers & Scanners', 'Toners & Cartridges', 'Softwares', 'Components & Parts'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Computer Cables & Connectors', 'Networking Devices', 'Mouses & Keyboards', 'Laptops', 'Storage Devices', 'Computer AV Accessories', 'Monitors', 'Printers & Scanners', 'Toners & Cartridges', 'Softwares', 'Components & Parts'])
 
 
 
@@ -1007,7 +1028,9 @@ if main == 'Computers & IT': ######
 
 if main == 'Tools & DIY': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Hand Tools', 'Power Tools', 'Safety & Security', 'Professional Cleaning Products', 'Garden Tools', 'Hardware', 'Painting Supplies & Wall Treatment', 'Power Solutions'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Hand Tools', 'Power Tools', 'Safety & Security', 'Professional Cleaning Products', 'Garden Tools', 'Hardware', 'Painting Supplies & Wall Treatment', 'Power Solutions'])
 
 
 
@@ -1101,7 +1124,9 @@ if main == 'Tools & DIY': ######
 
 if main == 'Office Supplies': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Office Pantry', 'Office Cleaning', 'Office Basics', 'Paper'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Office Pantry', 'Office Cleaning', 'Office Basics', 'Paper'])
 
 
 
@@ -1141,7 +1166,9 @@ if main == 'Office Supplies': ######
 
 if main == 'Mobiles & Tablets': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Mobile Accessories', 'Mobile Phones', 'Tablets & iPad'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Mobile Accessories', 'Mobile Phones', 'Tablets & iPad'])
 
 
 
@@ -1180,7 +1207,9 @@ if main == 'Mobiles & Tablets': ######
 
 if main == 'Toys & Games': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Toy Figures & Playsets', 'Dolls & Accessories', 'Games & Accessories', 'Hobbies', 'Sports & Outdoor Play', 'Play Vehicles', 'Dress Up & Pretend Play', 'Learning & Education', 'Stuffed Animals & Plush Toys', 'Puzzles', 'Tricycles & Scooters', 'Arts & Crafts', 'Baby & Toddler Toys', 'Building Toys', 'Party Supplies'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Toy Figures & Playsets', 'Dolls & Accessories', 'Games & Accessories', 'Hobbies', 'Sports & Outdoor Play', 'Play Vehicles', 'Dress Up & Pretend Play', 'Learning & Education', 'Stuffed Animals & Plush Toys', 'Puzzles', 'Tricycles & Scooters', 'Arts & Crafts', 'Baby & Toddler Toys', 'Building Toys', 'Party Supplies'])
 
 
 
@@ -1351,7 +1380,9 @@ if main == 'Toys & Games': ######
 
 if main == 'Perfumes & Fragrances': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ["Arabic Perfumes", "Men's Perfume", "Women's Perfume", "Unisex Perfumes", "Fragrance Sets"])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ["Arabic Perfumes", "Men's Perfume", "Women's Perfume", "Unisex Perfumes", "Fragrance Sets"])
 
 
 
@@ -1412,7 +1443,9 @@ if main == 'Perfumes & Fragrances': ######
 
 if main == 'Fashion': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Womens Fashion', 'Mens Fashion', 'Kids & Baby Fashion'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Womens Fashion', 'Mens Fashion', 'Kids & Baby Fashion'])
 
 
 
@@ -1487,7 +1520,9 @@ if main == 'Fashion': ######
 
 if main == 'Luggage & Travel Gear': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Backpacks', 'Soft Trolley Bags', 'Hard Trolley Bags', 'Business & Laptop Bags', 'Duffel Bags', 'Cabin Baggage', 'Kids Bags', 'Luggage Accessories', 'Messenger Bags', 'Travel Plugs & Adapters'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Backpacks', 'Soft Trolley Bags', 'Hard Trolley Bags', 'Business & Laptop Bags', 'Duffel Bags', 'Cabin Baggage', 'Kids Bags', 'Luggage Accessories', 'Messenger Bags', 'Travel Plugs & Adapters'])
     
 
 
@@ -1499,7 +1534,9 @@ if main == 'Luggage & Travel Gear': ######
 
 if main == 'Pharmacy': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Braces Splints & Supports', 'Bed Pillows & Positioners', 'Face Mask', 'Pain Relief Medications & Treatments', 'Walkers Rollators & Accessories', 'Home Tests'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Braces Splints & Supports', 'Bed Pillows & Positioners', 'Face Mask', 'Pain Relief Medications & Treatments', 'Walkers Rollators & Accessories', 'Home Tests'])
 
 
 
@@ -1571,7 +1608,9 @@ if main == 'Pharmacy': ######
 
 if main == 'Baby Care': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Infant Milk & Food', 'Bottle Feeding', 'Baby Medical & Health Care', 'Bathing', 'Weaning & Toddler Feeding', 'Diapering', 'Baby Oral Care'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Infant Milk & Food', 'Bottle Feeding', 'Baby Medical & Health Care', 'Bathing', 'Weaning & Toddler Feeding', 'Diapering', 'Baby Oral Care'])
 
 
 
@@ -1654,7 +1693,9 @@ if main == 'Baby Care': ######
 
 if main == 'Cakes & Flowers': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Fresh Flower Arrangement', 'Cakes', 'Flowers', 'Combos', 'Plants'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Fresh Flower Arrangement', 'Cakes', 'Flowers', 'Combos', 'Plants'])
 
 
 
@@ -1715,7 +1756,9 @@ if main == 'Cakes & Flowers': ######
 
 if main == 'Home Decor & Furnishing': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Wall Decor', 'Home Decor', 'Kitchen Linen', 'Bathroom Linen', 'Bedroom Linen'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Wall Decor', 'Home Decor', 'Kitchen Linen', 'Bathroom Linen', 'Bedroom Linen'])
 
 
 
@@ -1776,7 +1819,9 @@ if main == 'Home Decor & Furnishing': ######
 
 if main == 'Musical Instruments': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Guitars', 'DJ Equipments', 'Violin - Ukulele & Oud', 'Pianos & Keyboards'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Guitars', 'DJ Equipments', 'Violin - Ukulele & Oud', 'Pianos & Keyboards'])
 
     if sub == 'Guitars' or sub == 'DJ Equipments' or sub == 'Violin - Ukulele & Oud' or sub == 'Pianos & Keyboards': ######
 
@@ -1786,7 +1831,9 @@ if main == 'Musical Instruments': ######
 
 if main == 'Gaming & Consoles': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Gaming Mice', 'Gaming Components', 'Gaming Headset', 'Gaming Chairs', 'Gaming Keyboard', 'Controllers-Joysticks & Accessories', 'PS4 Games', 'Gaming Monitors', 'Gaming Consoles', 'Gaming Desktop'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Gaming Mice', 'Gaming Components', 'Gaming Headset', 'Gaming Chairs', 'Gaming Keyboard', 'Controllers-Joysticks & Accessories', 'PS4 Games', 'Gaming Monitors', 'Gaming Consoles', 'Gaming Desktop'])
 
     if sub == 'Gaming Mice' or sub == 'Gaming Components' or sub == 'Gaming Headset' or sub == 'Gaming Chairs' or sub == 'Gaming Keyboard' or sub == 'Controllers-Joysticks & Accessories' or sub == 'PS4 Games' or sub == 'Gaming Monitors' or sub == 'Gaming Consoles' or sub == 'Gaming Desktop': ######
 
@@ -1796,7 +1843,9 @@ if main == 'Gaming & Consoles': ######
 
 if main == 'Diet & Nutrition': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Vitamins & Supplements', 'Protein', 'Weight Management', 'Herbs & Natural Solutions'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Vitamins & Supplements', 'Protein', 'Weight Management', 'Herbs & Natural Solutions'])
 
 
 
@@ -1846,7 +1895,9 @@ if main == 'Diet & Nutrition': ######
 
 if main == 'Furniture & Storage': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Bathroom Storage & Organiser', 'Bedroom', 'Storage & Organisation', 'Living Room', 'Kitchen & Dining'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Bathroom Storage & Organiser', 'Bedroom', 'Storage & Organisation', 'Living Room', 'Kitchen & Dining'])
 
 
 
@@ -1908,7 +1959,9 @@ if main == 'Furniture & Storage': ######
 
 if main == 'Automotive': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Car Mobile Accessories', 'Car Services', 'Tires & Wheels'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Car Mobile Accessories', 'Car Services', 'Tires & Wheels'])
 
     if sub == 'Car Mobile Accessories' or sub == 'Car Services' or sub == 'Tires & Wheels': ######
 
@@ -1918,7 +1971,9 @@ if main == 'Automotive': ######
 
 if main == 'Home Improvement & Lighting': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Functional Lighting', 'Electricals', 'Safes & Security'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Functional Lighting', 'Electricals', 'Safes & Security'])
 
 
 
@@ -1957,7 +2012,9 @@ if main == 'Home Improvement & Lighting': ######
 
 if main == 'School Essential': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Backpack & Storages', 'Calculator'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Backpack & Storages', 'Calculator'])
 
 
 
@@ -1985,7 +2042,9 @@ if main == 'School Essential': ######
 
 if main == 'Telecom': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Batelco'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Batelco'])
 
 
 
@@ -2002,7 +2061,9 @@ if main == 'Telecom': ######
 
 if main == 'Pet Supplies': ######
 
-    sub = col1.radio('CHOOSE SUB CATEGORY :', ['Cat Food', 'Cat Care & Accessories', 'Dog Care & Accessories', 'Dog Food'])
+    sub_cat_text()
+
+    sub = col1.radio('Choose Sub Category :', ['Cat Food', 'Cat Care & Accessories', 'Dog Care & Accessories', 'Dog Food'])
 
 
 
