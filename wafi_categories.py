@@ -37,6 +37,7 @@ if menu == "INTRO":
 
     st.image(sidebar_img, use_column_width = True, output_format = 'PNG')
 
+
     if False:
         def intro_lottie(filepath: str):
             with open(filepath, "r") as f:
@@ -51,10 +52,10 @@ if menu == "INTRO":
 
         return r.json()
 
-    lottie_url = "https://assets3.lottiefiles.com/packages/lf20_lywlupuu.json"
+    lottie_url = "https://assets3.lottiefiles.com/packages/lf20_57TxAX.json"
     #lottie_local_path = "lottie_files/shopping_lottie.json"
     lottie_sidebar = intro_lottie(lottie_url)
-    st_lottie(lottie_sidebar, height = 60)
+    st_lottie(lottie_sidebar, height = 375)
 
 
 
