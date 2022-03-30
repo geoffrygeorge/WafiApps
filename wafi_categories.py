@@ -55,7 +55,7 @@ if menu == "INTRO":
     lottie_url = "https://assets3.lottiefiles.com/packages/lf20_57TxAX.json"
     #lottie_local_path = "lottie_files/shopping_lottie.json"
     lottie_sidebar = intro_lottie(lottie_url)
-    st_lottie(lottie_sidebar, height = 375)
+    st_lottie(lottie_sidebar, height = 375, renderer = "svg")
 
 
 
