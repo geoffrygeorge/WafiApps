@@ -14,6 +14,10 @@ st.set_page_config(
         layout = "centered"
         )
 
+sidebar_img = Image.open("wafi_logo_text.png")
+
+st.sidebar.image(sidebar_img, use_column_width = True, output_format = 'PNG')
+
 st.markdown("""
 
 <style>
@@ -30,9 +34,8 @@ st.markdown("""
 
 st.markdown('<p class="big-font">WAFIAPPS CATEGORY VIEWER</p>', unsafe_allow_html = True)
 
-#st.sidebar.image("wafi_logo.png", width = 100)
 
-st.sidebar.header('MAIN CATEGORIES')
+st.sidebar.title('MAIN CATEGORIES')
 
 main = st.sidebar.radio('Choose Main Category :', ['Supermarket', 'Watches', 'Appliances', 'Kitchen & Dining', 'Health & Beauty', 'Electronics', 'Computers & IT', 'Tools & DIY', 'Office Supplies', 'Mobiles & Tablets', 'Toys & Games', 'Perfumes & Fragrances', 'Fashion', 'Luggage & Travel Gear', 'Pharmacy', 'Baby Care', 'Cakes & Flowers', 'Home Decor & Furnishing', 'Musical Instruments', 'Gaming & Consoles', 'Diet & Nutrition', 'Furniture & Storage', 'Automotive', 'Home Improvement & Lighting', 'School Essential', 'Telecom', 'Pet Supplies'])
 
@@ -59,7 +62,7 @@ if False:
         col4.markdown('<p class="small-font">ROOT CATEGORIES</p>', unsafe_allow_html = True)
 
 # defining columns for structure
-col1, col2, col3, col4 = st.columns([7,1,1,5])
+col1, col2, col3, col4 = st.columns([7.5,1,1,5])
 
 
 def root_cat_text():
