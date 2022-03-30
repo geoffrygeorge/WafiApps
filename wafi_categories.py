@@ -23,7 +23,7 @@ st.set_page_config(
 st.sidebar.title("NAVIGATION")
 
 # defining various pages in the application
-main_menu = ['INTRO', 'CATEGORY VIEWER']
+main_menu = ['INTRO', 'CATEGORY VIEWER', 'VENDOR LIST']
 
 with st.container():
 
@@ -2155,3 +2155,11 @@ if menu == "CATEGORY VIEWER":
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i])
+
+
+
+
+#### CATEGORY VIEWER ####
+if menu == "VENDOR LIST":
+
+    st.error("UNDER CONSTRUCTION")
