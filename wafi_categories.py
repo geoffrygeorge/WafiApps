@@ -1,16 +1,19 @@
 import streamlit as st
 import time
 from PIL import Image
+from streamlit_lottie import st_lottie
+import json
+import requests
 # import pandas as pd
 # import numpy as np
 
 
 
 # INITIAL PAGE LAYOUT SETTINGS
-favicon_img = Image.open("wafi_favicon.ico")
+favicon_img = Image.open("images/wafi_favicon.ico")
 st.set_page_config(
         page_title = "WafiApps Categories",
-        initial_sidebar_state = "auto",
+        initial_sidebar_state = "collapsed",
         page_icon = favicon_img,
         layout = "centered"
         )
@@ -30,9 +33,29 @@ with st.container():
 #### INTRO ####
 if menu == "INTRO":
 
-    sidebar_img = Image.open("wafi_logo_text.png")
+    sidebar_img = Image.open("images/wafi_logo_text.png")
 
     st.image(sidebar_img, use_column_width = True, output_format = 'PNG')
+
+    if False:
+        def intro_lottie(filepath: str):
+            with open(filepath, "r") as f:
+                return json.load(f)
+
+    
+    @st.cache(show_spinner = False)
+    def intro_lottie(url: str):
+        r = requests.get(url)
+        if r.status_code != 200:
+            return None
+
+        return r.json()
+
+    lottie_url = "https://assets3.lottiefiles.com/packages/lf20_lywlupuu.json"
+    #lottie_local_path = "lottie_files/shopping_lottie.json"
+    lottie_sidebar = intro_lottie(lottie_url)
+    st_lottie(lottie_sidebar, height = 60)
+
 
 
 
