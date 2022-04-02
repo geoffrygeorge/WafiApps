@@ -13,7 +13,7 @@ import requests
 favicon_img = Image.open("images/wafi_favicon.ico")
 st.set_page_config(
         page_title = "WafiApps Categories",
-        initial_sidebar_state = "collapsed",
+        initial_sidebar_state = "expanded",
         page_icon = favicon_img,
         layout = "centered"
         )
@@ -43,7 +43,7 @@ if menu == "INTRO":
             with open(filepath, "r") as f:
                 return json.load(f)
 
-    
+
     @st.cache(show_spinner = False)
     def intro_lottie(url: str):
         r = requests.get(url)
