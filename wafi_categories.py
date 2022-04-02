@@ -13,7 +13,7 @@ import requests
 favicon_img = Image.open("images/wafi_favicon.ico")
 st.set_page_config(
         page_title = "WafiApps Categories",
-        initial_sidebar_state = "expanded",
+        initial_sidebar_state = "auto",
         page_icon = favicon_img,
         layout = "centered"
         )
