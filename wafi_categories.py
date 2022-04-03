@@ -4,7 +4,7 @@ from PIL import Image
 from streamlit_lottie import st_lottie
 import json
 import requests
-# import pandas as pd
+import pandas as pd
 # import numpy as np
 
 
@@ -109,7 +109,7 @@ if menu == "CATEGORY VIEWER":
     # defining columns for structure
     col1, col2, col3, col4 = st.columns([7.5,1,1,5])
 
-
+    # functions
     def root_cat_text():
 
         col4.subheader('ROOT CATEGORIES')
@@ -126,11 +126,17 @@ if menu == "CATEGORY VIEWER":
         col1.subheader('SUB CATEGORIES')
 
 
+    def root_cat_df(data):
+        df = pd.DataFrame(data)
+        df.index += 1
+        st.table(df)
+
+    # defining categories
     if main == 'Supermarket': ######
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Frozen Items', 'Beverages', 'Dairy & Eggs', 'Tea & Coffee', 'Cooking Ingredients', 'Organic', 'Tins Jars & Packets', 'Fresh Fruits & Vegetables', 'Chocolate & Confectionery','Fish & Meat', 'Rice Pasta & Pulses', 'Nuts Dates & Dried Fruits', 'Biscuits Crackers & Cakes', 'Chips Dips & Snacks', 'Breakfast Cereals', 'Condiments-Dressings & Marinades', 'Bakery', 'Household Cleaners', 'Jams Honey & Spreads', 'Salt & Sugar', 'Laundry', 'Home Baking & Desserts', 'Disposable Kitchenware', 'Tissues & Toilet Paper', 'Air Fresheners & Deodorizers', 'Shoe Care & Polish', 'Dishwashing Supplies', 'Papers Foils & Wraps', 'Protein', 'Barbecue', 'Insecticides'])
+        sub = col1.radio('Choose Sub Category :', ['Frozen Items', 'Beverages', 'Dairy & Eggs', 'Tea & Coffee', 'Cooking Ingredients', 'Organic', 'Tins Jars & Packets', 'Fresh Fruits & Vegetables', 'Chocolate & Confectionery','Fish & Meat', 'Rice Pasta & Pulses', 'Nuts Dates & Dried Fruits', 'Biscuits Crackers & Cakes', 'Chips Dips & Snacks', 'Breakfast Cereals', 'Condiments-Dressings & Marinades', 'Bakery', 'Household Cleaners', 'Jams Honey & Spreads', 'Salt & Sugar', 'Laundry', 'Home Baking & Desserts', 'Disposable Kitchenware', 'Tissues & Toilet Paper', 'Air Fresheners & Deodorizers', 'Shoe Care & Polish', 'Dishwashing Supplies', 'Papers Foils & Wraps', 'Barbecue', 'Insecticides'])
 
 
 
@@ -199,7 +205,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Organic': ######
 
-            root_cat = ['Whole Grains & Beans', 'Cooking & Baking', 'Oils & Vinegar', 'Spices & Powders', 'Tea Coffee & Drinks']
+            root_cat = ['Whole Grains & Beans', 'Cooking & Baking', 'Oils & Vinegar', 'Spices & Powders', 'Tea Coffee & Drinks', 'Snacks & Crackers', 'Jams & Spread', 'Breakfast & Cereals', 'Dry Fruit & Seeds', 'Protein Bars', 'Fresh Dairy']
 
             root_cat_text()
 
@@ -210,7 +216,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Tins Jars & Packets': ######
 
-            root_cat = ['Soup & Instant Noodles', 'Canned Vegetables', 'Tuna & Seafood', 'Canned Fruits', 'Powdered Milk', 'Pickles & Olives', 'Coconut Milk & Cream', 'Canned Milk', 'Canned Vegetable']
+            root_cat = ['Soup & Instant Noodles', 'Canned Vegetables', 'Tuna & Seafood', 'Canned Fruits', 'Powdered Milk', 'Pickles & Olives', 'Coconut Milk & Cream', 'Canned Milk', 'Canned Vegetable', 'Canned Food', 'Canned Meat']
 
             root_cat_text()
 
@@ -221,7 +227,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Fresh Fruits & Vegetables': ######
 
-            root_cat = ['Fresh Fruits', 'Fresh Vegetables']
+            root_cat = ['Fresh Fruits', 'Fresh Vegetables', 'Herbs']
 
             root_cat_text()
 
@@ -232,7 +238,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Chocolate & Confectionery': ######
 
-            root_cat = ['Chocolates', 'Indian Sweets & Snacks', 'Candy', 'Gums & Mints', 'Chocolate']
+            root_cat = ['Chocolates', 'Indian Sweets & Snacks', 'Candy', 'Gums & Mints', 'Chocolate', 'Seasonal']
 
             root_cat_text()
 
@@ -298,7 +304,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Breakfast Cereals': ######
 
-            root_cat = ['Cereals & Bars', 'Oats', 'Granola & Bars']
+            root_cat = ['Cereals & Bars', 'Oats', 'Granola & Bars', 'Muesli']
 
             root_cat_text()
 
@@ -320,7 +326,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Bakery': ######
 
-            root_cat = ['Sweets & Pastries', 'Croissant', 'Bread & Rolls', 'Wraps Pittas Naan & Thins', 'Cookies & Muffin', 'Pastries']
+            root_cat = ['Sweets & Pastries', 'Croissant', 'Bread & Rolls', 'Wraps Pittas Naan & Thins', 'Cookies & Muffin', 'Pastries', 'Tea Cake & Fruit Loaves']
 
             root_cat_text()
 
@@ -331,7 +337,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Household Cleaners': ######
 
-            root_cat = ['Scrubs & Sponges', 'Mops & Bucket Sets', 'Bathroom Cleaners & Fresheners', 'Bleach & Disinfectants', 'Cleaning Gloves', 'Kitchen Cleaner', 'Kitchen Cloth & Cleaning Wipes', 'Multipurpose Cleaner', 'Sink & Drain Unblocker', 'Wood & Metal Polish', 'Window Cleaners']
+            root_cat = ['Scrubs & Sponges', 'Mops & Bucket Sets', 'Bathroom Cleaners & Fresheners', 'Bleach & Disinfectants', 'Cleaning Gloves', 'Kitchen Cleaner', 'Kitchen Cloth & Cleaning Wipes', 'Multipurpose Cleaner', 'Sink & Drain Unblocker', 'Wood & Metal Polish', 'Window Cleaners', 'Sweeping Parts & Accessories']
 
             root_cat_text()
 
@@ -364,7 +370,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Laundry': ######
 
-            root_cat = ['Washing Powder', 'Washing Liquid & Gel', 'Stain Remover & Color Care']
+            root_cat = ['Washing Powder', 'Washing Liquid & Gel', 'Stain Remover & Color Care', 'Fabric Conditioner', 'Ironing Spray & Board Cover', 'Peg & Cloth Care', 'Sewing & Cloth Care']
 
             root_cat_text()
 
@@ -375,7 +381,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Home Baking & Desserts': ######
 
-            root_cat = ['Baking Ingredients', 'Desserts', 'Flour & Bread Mixes']
+            root_cat = ['Baking Ingredients', 'Desserts', 'Flour & Bread Mixes', 'Color Mixes']
 
             root_cat_text()
 
@@ -386,7 +392,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Disposable Kitchenware': ######
 
-            root_cat = ['Bin Liners & Garbage Bags', 'Disposable Bowl & Tray', 'Disposable Cups & Glasses', 'Disposable Cutlery']
+            root_cat = ['Bin Liners & Garbage Bags', 'Disposable Bowl & Tray', 'Disposable Cups & Glasses', 'Disposable Cutlery', 'Disposable Plates', 'Disposable Straws & Stirrer', 'Disposable Table Mats & Covers']
 
             root_cat_text()
 
@@ -397,7 +403,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Tissues & Toilet Paper': ######
 
-            root_cat = ['Facial Tissues', 'Maxi Roll & Kitchen Roll', 'Toilet Paper']
+            root_cat = ['Facial Tissues', 'Maxi Roll & Kitchen Roll', 'Toilet Paper', 'Hand Paper Towel', 'Pocket Tissue', 'Paper Napkin']
 
             root_cat_text()
 
@@ -408,7 +414,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Air Fresheners & Deodorizers': ######
 
-            root_cat = ['Aerosols & Room Sprays', 'Car Air Freshener', 'Gels & Blocks Air Freshener']
+            root_cat = ['Aerosols & Room Sprays', 'Car Air Freshener', 'Gels & Blocks Air Freshener', 'Automatic Units & Refills', 'Scented Candles', 'Fabric Refreshers']
 
             root_cat_text()
 
@@ -430,7 +436,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Dishwashing Supplies': ######
 
-            root_cat = ['Dishwashing Liquid', 'Dishwashing Powder & Paste']
+            root_cat = ['Dishwashing Liquid', 'Dishwashing Powder & Paste', 'Dishwasher Tablet & Gel']
 
             root_cat_text()
 
@@ -441,18 +447,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Papers Foils & Wraps': ######
 
-            root_cat = ['Cling Film', 'Kitchen Aluminium Foil']
-
-            root_cat_text()
-
-            for i in range(len(root_cat)):
-                col4.write(root_cat[i])
-
-
-
-        if sub == 'Protein': ######
-
-            root_cat = ['Protein Drinks']
+            root_cat = ['Cling Film', 'Kitchen Aluminium Foil', 'Cooking & Baking Paper', 'Aluminium Foil Food Container']
 
             root_cat_text()
 
@@ -487,11 +482,15 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Mens Wrist Watch', 'Womens Wrist Watch', 'Boys Watches', 'Girls Watches'])
+        sub = col1.radio('Choose Sub Category :', ['Mens Wrist Watch', 'Womens Wrist Watch', 'Boys Watches', 'Girls Watches', 'Couple Watches ❗'])
 
         if sub == 'Mens Wrist Watch' or sub == 'Womens Wrist Watch' or sub == 'Boys Watches' or sub == 'Girls Watches': ######
 
             col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+        elif sub == 'Couple Watches ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED & THERE ARE NO ROOT-CATEGORIES')
 
 
 
@@ -505,7 +504,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Kitchen Appliances': ######
 
-            root_cat = ['Coffee Machines & Grinders', 'Hand Blenders & Mixers', 'Electric Kettles', 'Fryers', 'Juicers', 'Rice Cookers', 'Food Processors', 'Toasters', 'Oven & Toaster Grills', 'Mixer Grinders', 'Induction Cooktops', 'Snack Maker', 'Sandwich Makers', 'Bread Maker', 'Electric Steamers', 'Microwave Ovens', 'Meat Grinders & Mincers', 'Choppers & Chippers', 'Milk Frothers', 'Waffle & Dessert Makers']
+            root_cat = ['Coffee Machines & Grinders', 'Hand Blenders & Mixers', 'Electric Kettles', 'Fryers', 'Juicers', 'Rice Cookers', 'Food Processors', 'Toasters', 'Oven & Toaster Grills', 'Mixer Grinders', 'Induction Cooktops', 'Snack Maker', 'Sandwich Makers', 'Bread Maker', 'Electric Steamers', 'Microwave Ovens', 'Meat Grinders & Mincers', 'Choppers & Chippers', 'Milk Frothers', 'Waffle & Dessert Makers', 'Wet Grinders']
 
             root_cat_text()
 
@@ -516,7 +515,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Home Appliances': ######
 
-            root_cat = ['Irons & Steamers', 'Vacuum Cleaners', 'Water Dispensers & Purifiers', 'Dishwashers']
+            root_cat = ['Irons & Steamers', 'Vacuum Cleaners', 'Water Dispensers & Purifiers', 'Dishwashers', 'Sewing Machine & Accessories', 'Inverters']
 
             root_cat_text()
 
@@ -549,7 +548,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Refrigerators & Freezers': ######
 
-            root_cat = ['Single Door', 'Chest Freezer & Chiller', 'Double Door', 'Side by Side']
+            root_cat = ['Single Door', 'Chest Freezer & Chiller', 'Double Door', 'Side by Side', 'Triple Door']
 
             root_cat_text()
 
@@ -560,7 +559,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Microwave Ovens': ######
 
-            root_cat = ['Solo', 'Grill']
+            root_cat = ['Solo', 'Grill', 'Convection']
 
             root_cat_text()
 
@@ -582,7 +581,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Heating Cooling & Air Quality': ######
 
-            root_cat = ['Air Purifiers', 'Fans', 'Humidifiers', 'Air Coolers']
+            root_cat = ['Air Purifiers', 'Fans', 'Humidifiers', 'Air Coolers', 'Heaters', 'Water Heater ❗']
 
             root_cat_text()
 
@@ -611,7 +610,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Kitchen Tools': ######
 
-            root_cat = ['Knives', 'Utensils & Gadgets', 'Measures & Scales', 'Choppers & Chippers', 'Graters & Slicers']
+            root_cat = ['Knives', 'Utensils & Gadgets', 'Measures & Scales', 'Choppers & Chippers', 'Graters & Slicers', 'Kichen Ladels ❗']
 
             root_cat_text()
 
@@ -622,7 +621,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Serveware': ######
 
-            root_cat = ['Hotpots', 'Cups & Mugs', 'Serving Bowls', 'Cutlery', 'Serving Trays', 'Glassware & Drinkware']
+            root_cat = ['Hotpots', 'Cups & Mugs', 'Serving Bowls', 'Cutlery', 'Serving Trays', 'Glassware & Drinkware', 'Cookpots & Casseroles']
 
             root_cat_text()
 
@@ -633,7 +632,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Bakeware': ######
 
-            root_cat = ['Baking Tools', 'Cake & Muffin Moulds', 'Mixing Bowls', 'Serving Bowls']
+            root_cat = ['Baking Tools', 'Cake & Muffin Moulds', 'Mixing Bowls', 'Decorative Tools ❗', 'Cookie Cutters ❗']
 
             root_cat_text()
 
@@ -644,7 +643,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Kitchen Storage & Containers': ######
 
-            root_cat = ['Water Bottles & Flasks', 'Jars & Containers', 'Food Savers', 'Countertop & Wall Organization', 'Lunch Boxes & Bags', 'Cooler']
+            root_cat = ['Water Bottles & Flasks', 'Jars & Containers', 'Food Savers', 'Countertop & Wall Organization', 'Lunch Boxes & Bags', 'Cooler', 'Trash & Recycling ❗']
 
             root_cat_text()
 
@@ -655,7 +654,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Dinner Sets': ######
 
-            root_cat = ['Opalware & Glass', 'Plates']
+            root_cat = ['Opalware & Glass', 'Plates', 'Bone China & Porcelain ❗', 'Melamine ❗', 'Metalware ❗']
 
             root_cat_text()
 
@@ -668,13 +667,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming'])
+        sub = col1.radio('Choose Sub Category :', ['Face', 'Facial Skincare', 'Skin Care', 'Lips', 'Eyes', 'Hair Care', 'Bath & Body', 'Oral Hygiene', 'Makeup Tools & Accessories', 'Medicine & Treatment', 'Womens Toiletries', 'Suncare & Travel', 'Nail & Nail Polish', 'Mens Grooming', 'Lifestyle & Wellbeing ❗', 'Hair Styling Accessories ❗'])
 
 
 
         if sub == 'Face': ######
 
-            root_cat = ['Foundation & Contour', 'Concealer & Corrector', 'Primer Makeup', 'Facial Serum', 'Blushes & Bronzers', 'Powder', 'Makeup Sets']
+            root_cat = ['Foundation & Contour', 'Concealer & Corrector', 'Primer Makeup', 'Facial Serum', 'Blushes & Bronzers', 'Powder', 'Makeup Sets' , 'BB Cream ❗', 'CC Cream ❗', 'Highlighter & Luminizer ❗', 'Face Makeup Remover ❗', 'Makeup Palettes ❗']
 
             root_cat_text()
 
@@ -685,7 +684,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Facial Skincare': ######
 
-            root_cat = ['Face Cream & Moisturizer', 'Cleanser Toner & Face Mask', 'Anti Wrinkle Skin Care', 'Cotton Wool', 'Face Wash & Scrub', 'Face Wipes']
+            root_cat = ['Face Cream & Moisturizer', 'Cleanser Toner & Face Mask', 'Anti Wrinkle Skin Care', 'Cotton Wool', 'Face Wash & Scrub', 'Face Wipes', 'Lip Balm ❗']
 
             root_cat_text()
 
@@ -707,7 +706,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Lips': ######
 
-            root_cat = ['Lipstick', 'Lip Liner']
+            root_cat = ['Lipstick', 'Lip Liner', 'Lip Gloss ❗', 'Lip Makup Remover ❗']
 
             root_cat_text()
 
@@ -718,7 +717,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Eyes': ######
 
-            root_cat = ['Eyeliner & Mascara', 'Eye Pencil & Brow Liner', 'Eyelash Treatment', 'Eye Shadow & Eye Makeup Kit']
+            root_cat = ['Eyeliner & Mascara', 'Eye Pencil & Brow Liner', 'Eyelash Treatment', 'Eye Shadow & Eye Makeup Kit', 'Glitter & Shimmer ❗', 'Eye Makeup Remover ❗']
 
             root_cat_text()
 
@@ -740,7 +739,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Bath & Body': ######
 
-            root_cat = ['Body Wash & Shower Gel', 'Bath Accessories', 'Hand Wash & Soap', 'Talcum Powder']
+            root_cat = ['Body Wash & Shower Gel', 'Bath Accessories', 'Hand Wash & Soap', 'Talcum Powder', 'Body Lotion ❗', 'Bubble Bath Foam & Salts ❗', 'Kids Shower Gel & Handwash ❗']
 
             root_cat_text()
 
@@ -751,7 +750,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Oral Hygiene': ######
 
-            root_cat = ['Power Toothbrushes & Accessories', 'Tooth Brush & Floss', 'Toothpaste', 'Mouthwash']
+            root_cat = ['Power Toothbrushes & Accessories', 'Tooth Brush & Floss', 'Toothpaste', 'Mouthwash', 'Kids Oral Care', 'Whitening Oral Care ❗', 'Sensitive Oral Care ❗']
 
             root_cat_text()
 
@@ -762,7 +761,7 @@ if menu == "CATEGORY VIEWER":
                 
         if sub == 'Makeup Tools & Accessories': ######
 
-            root_cat = ['Brush Set']
+            root_cat = ['Brush Set', 'Tweezer & Trimmer ❗', 'Makeup Bag ❗']
 
             root_cat_text()
 
@@ -773,7 +772,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Medicine & Treatment': ######
 
-            root_cat = ['First Aid', 'Pain Relief', 'Heartburn & Indigestion', 'Sore Throat & Cough Medicine']
+            root_cat = ['First Aid', 'Pain Relief', 'Heartburn & Indigestion', 'Sore Throat & Cough Medicine', 'Eye Care ❗']
 
             root_cat_text()
 
@@ -806,7 +805,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Nail & Nail Polish': ######
 
-            root_cat = ['Nail Treatment', 'Nail Polish Remover', 'Manicure Kits']
+            root_cat = ['Nail Treatment', 'Nail Polish', 'Nail Polish Remover', 'Manicure Kits', 'Nail Tools ❗', 'Top & Base Coat ❗', 'False Nails ❗']
 
             root_cat_text()
 
@@ -817,12 +816,18 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Mens Grooming': ######
 
-            root_cat = ['Mens Deodorants & Antiperspirants', 'Shaving Cream Foams & Gels', 'Mens Razor & Blade']
+            root_cat = ['Mens Deodorants & Antiperspirants', 'Shaving Cream Foams & Gels', 'Mens Razor & Blade', 'Mens Facewash ❗', 'Mens Moisturizer & After Shave ❗', 'Beard Care ❗', 'Mens Skincare ❗', 'Mens Body Wash & Shower Gel ❗', 'Mens Shampoo ❗', 'Mens Hairstyling ❗']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i]) 
+
+
+
+        if sub == 'Lifestyle & Wellbeing ❗' or sub == 'Hair Styling Accessories ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -880,7 +885,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Wearable Technology': ######
 
-            root_cat = ['Smart Watch', 'Activity Trackers', 'Arm & Wristbands', 'Apple Watch']
+            root_cat = ['Smart Watch', 'Activity Trackers', 'Arm & Wristbands', 'Apple Watch', 'Clips ❗', 'VR Headsets ❗']
 
             root_cat_text()
 
@@ -891,7 +896,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Cameras & Accessories': ######
 
-            root_cat = ['Instant Film Cameras', 'Lenses & Accessories', 'DSLR Cameras', 'Action Cameras']
+            root_cat = ['Instant Film Cameras', 'Lenses & Accessories', 'DSLR Cameras', 'Action Cameras', 'Digital Cameras', 'Camcorders']
 
             root_cat_text()
 
@@ -902,7 +907,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Health Care Appliances': ######
 
-            root_cat = ['Health Massagers', 'Weighing Scales', 'BP Monitors']
+            root_cat = ['Health Massagers', 'Weighing Scales', 'BP Monitors', 'Nebulizers Inhalers & Masks', 'Oral Care']
 
             root_cat_text()
 
@@ -913,7 +918,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Smart Home & Office': ######
 
-            root_cat = ['CCTV Cameras & Accessories', 'Intercom Systems']
+            root_cat = ['CCTV Cameras & Accessories', 'Intercom Systems', 'Smart Lighting ❗', 'Baby Monitors ❗', 'Safety Lockers ❗', 'Batteries & Chargers ❗']
 
             root_cat_text()
 
@@ -924,7 +929,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Televisions': ######
 
-            root_cat = ['Cables & Accessories', 'Smart TV', 'Ultra HD TV']
+            root_cat = ['Smart TV', 'Ultra HD TV', 'QLED TV', 'LED TV', 'Full HD TV', 'Cables & Accessories', 'OLED TV ❗']
 
             root_cat_text()
 
@@ -946,7 +951,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Audio & Video': ######
 
-            root_cat = ['Audio & Video Accessories', 'Projectors', 'Hi-Fi & Home Audio', 'Home Theatre Systems', 'Set-Top Boxes']
+            root_cat = ['Audio & Video Accessories', 'Projectors', 'Hi-Fi & Home Audio', 'Home Theatre Systems', 'Set-Top Boxes', 'DVD Players & Recorders ❗', 'Media Streaming Devices ❗']
 
             root_cat_text()
 
@@ -959,13 +964,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Computer Cables & Connectors', 'Networking Devices', 'Mouses & Keyboards', 'Laptops', 'Storage Devices', 'Computer AV Accessories', 'Monitors', 'Printers & Scanners', 'Toners & Cartridges', 'Softwares', 'Components & Parts'])
+        sub = col1.radio('Choose Sub Category :', ['Computer Cables & Connectors', 'Networking Devices', 'Mouses & Keyboards', 'Laptops', 'Desktops', 'Mac', 'Storage Devices', 'Computer AV Accessories', 'Monitors', 'Printers & Scanners', 'Toners & Cartridges', 'Softwares', 'Components & Parts'])
 
 
 
         if sub == 'Computer Cables & Connectors': ######
 
-            root_cat = ['HDMI Cables', 'USB Cables', 'USB Hubs', 'Adapters', 'Ethernet Cables', 'SATA Cables']
+            root_cat = ['HDMI Cables', 'USB Cables', 'USB Hubs', 'Adapters', 'Ethernet Cables', 'SATA Cables', 'Lightening Cables']
 
             root_cat_text()
 
@@ -998,7 +1003,29 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Laptops': ######
 
-            root_cat = ['Laptop', 'Business Laptops', 'MS Surface']
+            root_cat = ['Laptop', 'Business Laptops', 'MS Surface', 'Gaming Laptops', 'Convertible 2in1 ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Desktops': ######
+
+            root_cat = ['Computer Towers', 'All in One PCs', 'iMac ❗', 'Gaming Desktops ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Mac': ######
+
+            root_cat = ['Macbook Air', 'Macbook Pro', 'iMac ❗', 'iMac Pro ❗']
 
             root_cat_text()
 
@@ -1009,7 +1036,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Storage Devices': ######
 
-            root_cat = ['External Data Storage', 'Internal Data Storage', 'Flash Drives']
+            root_cat = ['External Data Storage', 'Internal Data Storage', 'Flash Drives', 'Network Attached Storage ❗']
 
             root_cat_text()
 
@@ -1020,7 +1047,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Computer AV Accessories': ######
 
-            root_cat = ['Webcams & Voip', 'Computer Headsets']
+            root_cat = ['Webcams & Voip', 'Computer Headsets', 'Computer Speakers ❗']
 
             root_cat_text()
 
@@ -1031,7 +1058,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Monitors': ######
 
-            root_cat = ['Monitor Accessories', 'Projectors']
+            root_cat = ['Samsung Monitors', 'Dell Monitors', 'HP Monitors', 'Monitor Accessories', 'Projectors', 'LG Monitors ❗', 'BenQ Monitors ❗', 'Viewsonic Monitors ❗', 'MSI Monitors ❗']
 
             root_cat_text()
 
@@ -1042,7 +1069,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Printers & Scanners': ######
 
-            root_cat = ['Ink Tank Printers', 'Inkjet Printers']
+            root_cat = ['Ink Tank Printers', 'Inkjet Printers', 'Laser Printers', 'Photo Printers', 'Thermal Printers ❗', 'Sacnners ❗']
 
             root_cat_text()
 
@@ -1053,7 +1080,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Toners & Cartridges': ######
 
-            root_cat = ['Ink Cartridges']
+            root_cat = ['Ink Cartridges', 'Ink Bottles', 'Toners', 'Compatible Catridges']
 
             root_cat_text()
 
@@ -1064,7 +1091,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Softwares': ######
 
-            root_cat = ['Operating Systems']
+            root_cat = ['Operating Systems', 'Antivirus & Security', 'Business & Office']
 
             root_cat_text()
 
@@ -1075,7 +1102,12 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Components & Parts': ######
 
-            col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+            root_cat = ['External Components', 'Internal Components ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
 
 
 
@@ -1089,7 +1121,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Hand Tools': ######
 
-            root_cat = ['Tool Sets', 'Screw Drivers', 'Measure & Layout Tools', 'Multi Tools', 'Pliers', 'Hammers', 'Tool Boxes', 'Cutting Tools', 'Chisels', 'Wrenchs', 'Saws']
+            root_cat = ['Tool Sets', 'Screw Drivers', 'Measure & Layout Tools', 'Multi Tools', 'Pliers', 'Hammers', 'Tool Boxes', 'Cutting Tools', 'Chisels', 'Wrenchs', 'Saws', 'Ratchets & Sockets ❗', 'Crimping Tools ❗', 'Clamp & Vizes ❗']
 
             root_cat_text()
 
@@ -1100,7 +1132,7 @@ if menu == "CATEGORY VIEWER":
             
         if sub == 'Power Tools': ######
 
-            root_cat = ['Tool Sets', 'Sawing Tools', 'Jig Saws & Blades', 'Cordless Drill', 'Drilling', 'Sanding Tools', 'Planers', 'Cutting Tools', 'Pneumatic Tools', 'Routers', 'Staplers', 'Grinding Tools', 'Rotary Hammers']
+            root_cat = ['Tool Sets', 'Sawing Tools', 'Jig Saws & Blades', 'Cordless Drill', 'Drilling', 'Sanding Tools', 'Planers', 'Cutting Tools', 'Pneumatic Tools', 'Routers', 'Staplers', 'Saws', 'Grinding Tools', 'Rotary Hammers', 'Heatguns', 'Nibblers ❗', 'Shears ❗', 'Distance Measurer ❗', 'Demolition Tools ❗']
 
             root_cat_text()
 
@@ -1111,7 +1143,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Safety & Security': ######
 
-            root_cat = ['Eye Protection', 'Safety Shoes', 'Head Protection', 'Hand & Arm Protection', 'Ear Protection']
+            root_cat = ['Eye Protection', 'Safety Shoes', 'Head Protection', 'Hand & Arm Protection', 'Ear Protection', 'Masks & Respirators', 'Traffic Cones ❗', 'Doctor/Lab Coats ❗', 'Fall Protection ❗']
 
             root_cat_text()
 
@@ -1122,7 +1154,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Professional Cleaning Products': ######
 
-            root_cat = ['Pressure Washers', 'Pro Vacuum Cleaners', 'Air Blowers', 'Steam Cleaners']
+            root_cat = ['Pressure Washers', 'Pro Vacuum Cleaners', 'Air Blowers', 'Steam Cleaners', 'Floor Polishers', 'Electric Brooms ❗']
 
             root_cat_text()
 
@@ -1133,7 +1165,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Garden Tools': ######
 
-            root_cat = ['Lawn Movers']
+            root_cat = ['Lawn Movers', 'Hoses', 'Nozzles', 'Sprinklers', 'Hand Tools', 'Hedge Trimmers ❗']
 
             root_cat_text()
 
@@ -1144,7 +1176,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Hardware': ######
 
-            root_cat = ['Adhesives & Sealers']
+            root_cat = ['Adhesives & Sealers', 'Nails Screws & Fasteners ❗', 'Bathroom Hardware ❗', 'Cabinet Hardware ❗', 'Furniture Hardware ❗', 'Door Hardware & Locks ❗', 'Tarps & Tie-Downs ❗']
 
             root_cat_text()
 
@@ -1155,7 +1187,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Painting Supplies & Wall Treatment': ######
 
-            root_cat = ['Paint Sprayers', 'Polishers']
+            root_cat = ['Paint Sprayers', 'Polishers', 'Paint & Primer ❗', 'Wall Stickers ❗', 'Wallpaper & Supplies ❗', 'Finishes Sealers & Stains ❗']
 
             root_cat_text()
 
@@ -1166,7 +1198,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Power Solutions': ######
 
-            root_cat = ['Power Detectors']
+            root_cat = ['Power Detectors', 'Cable Reels ❗', 'Portable Generators ❗']
 
             root_cat_text()
 
@@ -1179,7 +1211,7 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Office Pantry', 'Office Cleaning', 'Office Basics', 'Paper'])
+        sub = col1.radio('Choose Sub Category :', ['Office Pantry', 'Office Cleaning', 'Office Basics', 'Paper', 'Desk Organizers & Accessories', 'Shredder & Office Machines', 'Writing Pads & Notebook ❗', 'Writing Supplies ❗', 'Folders & Filing ❗', 'Tape & Adhesives ❗', 'Boards & Easels ❗', 'Stamp & Embossers ❗', 'Time Card Label & Label Makers ❗', 'Paper Rolls ❗', 'Planners & Calendars ❗'])
 
 
 
@@ -1197,7 +1229,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Office Basics': ######
 
-            root_cat = ['Battery', 'Scissors']
+            root_cat = ['Battery', 'Scissors', 'Staplers & Staples', 'Paper & Binder Clips ❗', 'Punches ❗', 'Envelopes ❗', 'Ruler ❗', 'Rubber Band ❗', 'Clipboards ❗', 'Safety Signs & Stickers ❗', 'Name Badges & Lanyards ❗', 'Key Box & Accessories ❗']
 
             root_cat_text()
 
@@ -1208,12 +1240,40 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Paper': ######
 
-            root_cat = ['Copy Paper', 'Other Paper']
+            root_cat = ['Copy Paper', 'Other Paper', 'Color Paper']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i])
+
+
+
+        if sub == 'Desk Organizers & Accessories': ######
+
+            root_cat = ['Desk Organizers', 'Business Card Organizers ❗', 'Magazine Rack ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Shredder & Office Machines': ######
+
+            root_cat = ['Laminator', 'Calculator ❗', 'Paper Trimmer & Cutter ❗', 'Shredder ❗', 'Price Labeller ❗', 'Binders & Binder Accessories ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Writing Pads & Notebook ❗' or sub == 'Writing Supplies ❗' or sub == 'Folders & Filing ❗' or sub == 'Tape & Adhesives ❗' or sub == 'Boards & Easels ❗' or sub == 'Stamp & Embossers ❗' or sub == 'Time Card Label & Label Makers ❗' or sub == 'Paper Rolls ❗' or sub == 'Planners & Calendars ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -1227,7 +1287,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Mobile Accessories': ######
 
-            root_cat = ['Mobile Cables', 'Mobile Chargers', 'Mobile Cases & Covers', 'Power Banks', 'Mobile Holders', 'Mobile Screen Protectors', 'SD Cards', 'Selfie Stick']
+            root_cat = ['Mobile Cables', 'Mobile Chargers', 'Mobile Cases & Covers', 'Power Banks', 'Mobile Holders', 'Mobile Screen Protectors', 'SD Cards', 'Selfie Stick', 'Bluetooth Devices & Headsets ❗']
 
             root_cat_text()
 
@@ -1238,7 +1298,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Mobile Phones': ######
 
-            root_cat = ['Nokia', 'Samsung', 'Huawei', 'iPhone', 'OnePlus']
+            root_cat = ['Nokia', 'Samsung', 'Huawei', 'iPhone', 'OnePlus', 'Xiaomi', 'Vivo', 'Alcatel', 'Ravoz', 'Oppo', 'Realme ❗']
 
             root_cat_text()
 
@@ -1249,7 +1309,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Tablets & iPad': ######
 
-            root_cat = ['Huawei', 'Alcatel', 'Lenovo']
+            root_cat = ['iPad', 'Samsung', 'Huawei', 'Alcatel', 'Lenovo']
 
             root_cat_text()
 
@@ -1262,13 +1322,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Toy Figures & Playsets', 'Dolls & Accessories', 'Games & Accessories', 'Hobbies', 'Sports & Outdoor Play', 'Play Vehicles', 'Dress Up & Pretend Play', 'Learning & Education', 'Stuffed Animals & Plush Toys', 'Puzzles', 'Tricycles & Scooters', 'Arts & Crafts', 'Baby & Toddler Toys', 'Building Toys', 'Party Supplies'])
+        sub = col1.radio('Choose Sub Category :', ['Toy Figures & Playsets', 'Dolls & Accessories', 'Games & Accessories', 'Hobbies', 'Sports & Outdoor Play', 'Play Vehicles', 'Dress Up & Pretend Play', 'Learning & Education', 'Stuffed Animals & Plush Toys', 'Puzzles', 'Tricycles & Scooters', 'Arts & Crafts', 'Baby & Toddler Toys', 'Building Toys', 'Party Supplies', 'Kids Electronics', 'Novelty & Gag Toys'])
 
 
 
         if sub == 'Toy Figures & Playsets': ######
 
-            root_cat = ['Action Figures']
+            root_cat = ['Action Figures', 'Playsets & Vehicles']
 
             root_cat_text()
 
@@ -1279,7 +1339,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Dolls & Accessories': ######
 
-            root_cat = ['Dolls', 'Doll Accessories', 'Doll House Accessories', 'Playsets']
+            root_cat = ['Dolls', 'Doll Accessories', 'Doll House Accessories', 'Playsets', 'Doll Houses ❗']
 
             root_cat_text()
 
@@ -1290,7 +1350,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Games & Accessories': ######
 
-            root_cat = ['Board Games', 'Card Games', 'Floor Games', 'Stacking Games', 'Arcade & Table Games', 'Tile Games']
+            root_cat = ['Board Games', 'Card Games', 'Floor Games', 'Stacking Games', 'Arcade & Table Games', 'Tile Games', 'Dice Games', 'Handheld Games', 'Game Accessories', 'Marble Games', 'Travel Games ❗', 'Gaming Tops ❗', 'DVD Games ❗', 'Game Collections ❗']
 
             root_cat_text()
 
@@ -1301,7 +1361,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Hobbies': ######
 
-            root_cat = ['Collecting', 'Pre-built Display Models', 'Robotics']
+            root_cat = ['Collecting', 'Pre-built Display Models', 'Robotics', 'Model Kits', 'Radio & Remote Control ❗', 'Model Trains ❗', 'Slot Cars ❗', 'Rockets ❗', 'Painting & Surfacing ❗', 'Tools ❗', 'Coins ❗']
 
             root_cat_text()
 
@@ -1312,7 +1372,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Sports & Outdoor Play': ######
 
-            root_cat = ['Blasters & Foam Play', 'Trampoline & Accessories', 'Play Sets & Playground Equipments']
+            root_cat = ['Blasters & Foam Play', 'Trampoline & Accessories', 'Play Sets & Playground Equipments', 'Bubbles', 'Sandboxes', 'Yo-Yos', 'Pools & Water Toys ❗', 'Sand & Water Tables ❗', 'Play Tents & Tunnels ❗', 'Inflatable Bouncers ❗', 'Ball Pits & Accessories ❗', 'Kites & Wind Spinners ❗', 'Playhouses ❗', 'Toy Sports ❗', 'Flying Toys ❗', 'Gardening Tools ❗', 'Kickball & Playground Balls ❗', 'Pogo Sticks & Hoppers ❗']
 
             root_cat_text()
 
@@ -1323,7 +1383,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Play Vehicles': ######
 
-            root_cat = ['Toy Vehicles']
+            root_cat = ['Toy Vehicles', 'Die-Cast Vehicles', 'Vehicle Playsets', 'Play Trains & Railway Sets ❗', 'Pull Back Vehicles ❗']
 
             root_cat_text()
 
@@ -1334,7 +1394,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Dress Up & Pretend Play': ######
 
-            root_cat = ['Pretend Play']
+            root_cat = ['Pretend Play', 'Beauty & Fashion', 'Costumes ❗', 'Accessories ❗', 'Masks ❗', 'Wigs ❗', 'Hats ❗']
 
             root_cat_text()
 
@@ -1345,7 +1405,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Learning & Education': ######
 
-            root_cat = ['Science Kits & Toys']
+            root_cat = ['Science Kits & Toys', 'Counting & Math Toys', 'Reading & Writing', 'Marble Runs ❗', 'Musical Instruments ❗', 'Gepgraphic Globes ❗', 'Flash Cards ❗', 'Rock Tumblers ❗', 'Electronic Learning Products ❗', 'Detective & Spy ❗', 'Solar Power Kits ❗', 'Habitats ❗']
 
             root_cat_text()
 
@@ -1356,7 +1416,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Stuffed Animals & Plush Toys': ######
 
-            root_cat = ['Plush Figures', 'Teddy Bears & Stuffed Animals']
+            root_cat = ['Plush Figures', 'Plush Puppets', 'Teddy Bears & Stuffed Animals']
 
             root_cat_text()
 
@@ -1367,7 +1427,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Puzzles': ######
 
-            root_cat = ['Jigsaw Puzzles']
+            root_cat = ['Jigsaw Puzzles', 'Brain Teasers', 'Pegged Puzzles', 'Puzzle Play Mats ❗', '3D Puzzles ❗', 'Floor Puzzles ❗', 'Puzzle Accessories ❗', 'Sudoku Puzzles ❗']
 
             root_cat_text()
 
@@ -1378,7 +1438,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Tricycles & Scooters': ######
 
-            root_cat = ['Scooters & Accessories']
+            root_cat = ['Scooters & Accessories', 'Balance Bikes ❗', 'Bike Accessories ❗', 'Electric Vehicles ❗', 'Kids Bikes ❗', 'Kids Helmets ❗', 'Kids Protective Gear ❗', 'Pedal Cars ❗', 'Pull-Along Wagons ❗', 'Ride On Toys ❗', 'Skateboards ❗', 'Skates ❗', 'Tricycles ❗', 'Unicycles ❗']
 
             root_cat_text()
 
@@ -1389,7 +1449,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Arts & Crafts': ######
 
-            root_cat = ['Craft Kits']
+            root_cat = ['Craft Kits', 'Clay Dough & Kinetic Sand', 'Drawing & Painting Supplies']
 
             root_cat_text()
 
@@ -1400,7 +1460,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Baby & Toddler Toys': ######
 
-            root_cat = ['Musical Toys', 'Sorting & Stacking Toys']
+            root_cat = ['Musical Toys', 'Sorting & Stacking Toys', 'Push & Pull Toys', 'Balls', 'Bath Toys ❗', 'Car Seat & Stroller Toys ❗', 'Hammering & Pounding Toys ❗', 'Indoor Climbers & Play ❗', 'Structures ❗', 'Mirrors ❗', 'Rattles & Plush Rings ❗', 'Spinning Tops ❗', 'Stick Horses ❗', 'Teaching Clocks ❗', 'Teethers ❗']
 
             root_cat_text()
 
@@ -1411,7 +1471,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Building Toys': ######
 
-            root_cat = ['Building Sets']
+            root_cat = ['Building Sets', 'Stacking Blocks', 'Figures', 'Gear Sets ❗', 'Storage & Accessories ❗']
 
             root_cat_text()
 
@@ -1422,7 +1482,29 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Party Supplies': ######
 
-            root_cat = ['Balloons']
+            root_cat = ['Balloons', 'Birthday Candles', 'Party Favors', 'Party Hats', 'Table Covers', 'Party Packs ❗', 'Banners ❗', 'Party Tableware ❗', 'Pinatas ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Kids Electronics': ######
+
+            root_cat = ['Remote & App Controlled Figure', 'Electronic Learning Toys', 'Plug & Play Video Games ❗', 'Walkie Talkies ❗', 'Electronic Pets ❗', 'Dance Mats ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Novelty & Gag Toys': ######
+
+            root_cat = ['Gag Toys', 'Magnetic Toys ❗', 'Desk Toys ❗', 'Water Balloons ❗', 'Spy Gadgets ❗', 'Slime & Putty Toys ❗', 'Money Banks ❗', 'Magic Kits & Accessories ❗', 'Prisms & Kaleidoscopes ❗', 'Nesting Dolls ❗', 'Flying Toys ❗']
 
             root_cat_text()
 
@@ -1452,7 +1534,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == "Men's Perfume": ######
 
-            root_cat = ["Eau de Toilette", "Eau de Parfum"]
+            root_cat = ["Eau de Toilette", "Eau de Parfum", "Eau de Cologne", "Aftershaves"]
 
             root_cat_text()
 
@@ -1463,7 +1545,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == "Women's Perfume": ######
 
-            root_cat = ["Eau de Parfum", "Eau de Toilette"]
+            root_cat = ["Eau de Parfum", "Eau de Toilette", "Eau de Cologne ❗", "Perfume Oils ❗"]
 
             root_cat_text()
 
@@ -1474,7 +1556,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == "Unisex Perfumes": ######
 
-            root_cat = ["Eau de Parfum", "Eau de Toilette"]
+            root_cat = ["Eau de Parfum", "Eau de Toilette", "Eau de Cologne", "Perfume Oils"]
 
             root_cat_text()
 
@@ -1504,26 +1586,57 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Womens Fashion': ######
 
-            root_cat = ['Clothing', 'Eyewear', 'Accessories', 'Bags & Wallets']
+            root_cat = ['Clothing', 'Eyewear', 'Accessories', 'Bags & Wallets', 'Womens Hats & Caps', 'Shoes ❗']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 if root_cat[i] == 'Clothing':
                     with col4.expander('Clothing'):
-                        st.write('Traditional Arabian ▶ Abayas')
+
+                        data = {'Traditional Arabian Wear':['Abayas', 'Dresses ❗', 'Hijabs ❗']}
+                        root_cat_df(data)
+
                         st.write('Dresses')
                         st.write('Tops Tees & Blouses')
                         st.write('Hoodies')
+                        st.write('Tights & Leggings ❗')
+                        st.write('Skirts ❗')
+                        st.write('Pants ❗')
+                        st.write('Jeans ❗')
+                        st.write('Sweatshirts ❗')
+                        st.write('Coats ❗')
+                        st.write('Jackets ❗')
+                        st.write('Shorts ❗')
+                        st.write('Socks ❗')
+                        st.write('Sports & Gym Wear ❗')
+                        st.write('Lingerie & Sleepwear ❗')
+                        st.write('Swim & Beachwear ❗')
+                        st.write('Maternity ❗')
+                        st.write('Traditional Indian Wear ❗')
+                        st.write('Scarves & Wraps ❗')
+
 
                 elif root_cat[i] == 'Eyewear':
                         with col4.expander('Eyewear'):
                             st.write('Sunglasses')
+                            st.write('Eyewear Frames ❗')
 
 
                 elif root_cat[i] == 'Bags & Wallets':
                         with col4.expander('Bags & Wallets'):
                             st.write('Handbags')
+                            st.write('School Bags')
+                            st.write('Wallets ❗')
+
+
+                elif root_cat[i] == 'Womens Hats & Caps':
+                        with col4.expander('Womens Hats & Caps'):
+                            st.write('Womens Baseball Caps')
+                            
+
+                elif root_cat[i] == 'Shoes ❗':                    
+                    col4.warning('CURRENTLY, "Shoes" CATEGORY IS DISABLED')
 
                 else:
                     col4.write(root_cat[i])
@@ -1532,7 +1645,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Mens Fashion': ######
 
-            root_cat = ['Mens Hats & Caps', 'Clothing', 'Accessories']
+            root_cat = ['Mens Hats & Caps', 'Clothing', 'Accessories', 'Shoes ❗']
 
             root_cat_text()
 
@@ -1545,9 +1658,26 @@ if menu == "CATEGORY VIEWER":
         
                 elif root_cat[i] == 'Clothing':
                     with col4.expander('Clothing'):
-                        st.write('Top Tees & Shirts')
+
+                        data = {'Top Tees & Shirts':['T-Shirts', 'Polos', 'Casual Shirts', 'Formal Shirts']}
+                        root_cat_df(data)
+
                         st.write('Jackets')
                         st.write('Hoodies')
+                        st.write('Pants ❗')
+                        st.write('Jeans ❗')
+                        st.write('Sweatshirts ❗')
+                        st.write('Coats ❗')
+                        st.write('Shorts ❗')
+                        st.write('Swimwear ❗')
+                        st.write('Innerwear & Loungewear ❗')
+                        st.write('Ghutras ❗')
+                        st.write('Tie ❗')
+                        st.write('Socks ❗')
+
+
+                elif root_cat[i] == 'Shoes ❗':                    
+                    col4.warning('CURRENTLY, "Shoes" CATEGORY IS DISABLED')
 
                 else:
                     col4.write(root_cat[i])
@@ -1556,7 +1686,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Kids & Baby Fashion': ######
 
-            root_cat = ['Boys']
+            root_cat = ['Boys', 'Girls ❗', 'Baby Boys ❗', 'Baby Girls ❗']
 
             root_cat_text()
 
@@ -1565,6 +1695,30 @@ if menu == "CATEGORY VIEWER":
                     with col4.expander('Boys'):
                         st.write('Tops & Tees')
                         st.write('Boys Cap')
+                        st.write('Hoodies & Sweatshirts ❗')
+                        st.write('Pants ❗')
+                        st.write('Jeans ❗')
+                        st.write('Shorts ❗')
+                        st.write('Suits & Blazers ❗')
+                        st.write('Socks ❗')
+                        st.write('Sleepwear & Robes ❗')
+                        st.write('Underwear ❗')
+                        st.write('Swimwear ❗')
+                        st.write('Sunglasses ❗')
+                        st.write('Shoes ❗')
+                        st.write('Bags & Accessories ❗')
+
+
+                elif root_cat[i] == 'Girls ❗':                    
+                    col4.warning('CURRENTLY, "Shoes" CATEGORY IS DISABLED')
+
+
+                elif root_cat[i] == 'Baby Boys ❗':
+                    col4.warning('CURRENTLY, "Baby Boys" CATEGORY IS DISABLED')
+
+
+                elif root_cat[i] == 'Baby Girls ❗':
+                    col4.warning('CURRENTLY, "Baby Girls" CATEGORY IS DISABLED')
 
                 else:
                     col4.write(root_cat[i])
@@ -1575,7 +1729,7 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Backpacks', 'Soft Trolley Bags', 'Hard Trolley Bags', 'Business & Laptop Bags', 'Duffel Bags', 'Cabin Baggage', 'Kids Bags', 'Luggage Accessories', 'Messenger Bags', 'Travel Plugs & Adapters'])
+        sub = col1.radio('Choose Sub Category :', ['Backpacks', 'Soft Trolley Bags', 'Hard Trolley Bags', 'Business & Laptop Bags', 'Duffel Bags', 'Cabin Baggage', 'Kids Bags', 'Luggage Accessories', 'Messenger Bags', 'Travel Plugs & Adapters', 'Luggage Sets', 'School Bags-Pencil Cases & Sets ❗', 'Handbags & Shoulder Bags ❗', 'Childrens Luggage ❗', 'Suitcases ❗', 'Waist Packs ❗', 'Wallets & Card Cases ❗', 'Money Organizers ❗', 'Travel Garment Bags ❗', 'Shopping Bags & Baskets ❗'])
         
 
 
@@ -1583,6 +1737,10 @@ if menu == "CATEGORY VIEWER":
 
             col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
 
+        elif sub == 'School Bags-Pencil Cases & Sets ❗' or sub == 'Handbags & Shoulder Bags ❗' or sub == 'Childrens Luggage ❗' or sub == 'Suitcases ❗' or sub == 'Waist Packs ❗' or sub == 'Wallets & Card Cases ❗' or sub == 'Money Organizers ❗' or sub == 'Travel Garment Bags ❗' or sub == 'Shopping Bags & Baskets ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED & THERE ARE NO ROOT-CATEGORIES')
+        
 
 
     if main == 'Pharmacy': ######
@@ -1595,7 +1753,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Braces Splints & Supports': ######
 
-            root_cat = ['Leg & Foot Supports', 'Arm Hand & Finger Supports', 'Back Neck & Shoulder Supports', 'Hip & Waist Supports', 'Athletic Tapes & Wraps', 'Chest Supports']
+            root_cat = ['Leg & Foot Supports', 'Arm Hand & Finger Supports', 'Back Neck & Shoulder Supports', 'Hip & Waist Supports', 'Athletic Tapes & Wraps', 'Chest Supports', 'Arthritis Gloves ❗', 'Braces ❗', 'Kinesiology Recovery Tapes ❗', 'Compression Socks ❗']
 
             root_cat_text()
 
@@ -1617,7 +1775,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Face Mask': ######
 
-            root_cat = ['Surgical Face Mask']
+            root_cat = ['Surgical Face Mask', 'Cloth Face Mask ❗']
 
             root_cat_text()
 
@@ -1650,7 +1808,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Home Tests': ######
 
-            root_cat = ['Pregnancy Tests']
+            root_cat = ['Pregnancy Tests', 'Family Planning Tests ❗']
 
             root_cat_text()
 
@@ -1663,7 +1821,7 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Infant Milk & Food', 'Bottle Feeding', 'Baby Medical & Health Care', 'Bathing', 'Weaning & Toddler Feeding', 'Diapering', 'Baby Oral Care'])
+        sub = col1.radio('Choose Sub Category :', ['Infant Milk & Food', 'Bottle Feeding', 'Baby Medical & Health Care', 'Bathing', 'Weaning & Toddler Feeding', 'Diapering', 'Baby Oral Care', 'Wipes & Accessories ❗', 'Baby Skin Care ❗', 'Bips Pacifiers & Teethers ❗', 'Breast Feed ❗', 'Baby Grooming ❗', 'Travel Gear & High Chairs ❗', 'Safety Equipment ❗'])
 
 
 
@@ -1744,6 +1902,12 @@ if menu == "CATEGORY VIEWER":
 
 
 
+        if sub == 'Wipes & Accessories ❗' or sub == 'Baby Skin Care ❗' or sub == 'Bips Pacifiers & Teethers ❗' or sub == 'Breast Feed ❗' or sub == 'Baby Grooming ❗' or sub == 'Travel Gear & High Chairs ❗' or sub == 'Safety Equipment ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
+
+
+
     if main == 'Cakes & Flowers': ######
 
         sub_cat_text()
@@ -1754,7 +1918,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Fresh Flower Arrangement': ######
 
-            root_cat = ['Flower Bouquet', 'Vase Arrangement', 'Flowers in Sleeve']
+            root_cat = ['Flower Bouquet', 'Vase Arrangement', 'Flowers in Sleeve', 'Flowers in Box ❗', 'Valentine Boquets ❗']
 
             root_cat_text()
 
@@ -1765,7 +1929,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Cakes': ######
 
-            root_cat = ['Cup Cakes', 'Frosting Cakes', 'Any Occassion', 'Cake Slices', 'Cake Shake', 'Designer Cakes', 'Donut']
+            root_cat = ['Cup Cakes', 'Frosting Cakes', 'Any Occassion', 'Cake Slices', 'Cake Shake', 'Designer Cakes', 'Donut', 'Heart Shaped Cakes ❗', 'Cartoon Cakes ❗', 'Eggless Cakes ❗', 'Photo Cakes ❗', 'Dry Cakes ❗', 'Cake in Jar ❗']
 
             root_cat_text()
 
@@ -1776,7 +1940,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Flowers': ######
 
-            root_cat = ['Roses']
+            root_cat = ['Roses', 'Orchids', 'Lillies ❗', 'Carnations ❗', 'Anthuriums ❗']
 
             root_cat_text()
 
@@ -1787,7 +1951,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Combos': ######
 
-            root_cat = ['Flowers & Chocolate']
+            root_cat = ['Flowers & Chocolate', 'Cake with Flowers ❗', 'Cake with Chocolates ❗', 'Flowers & Teddy ❗', 'Flowers & Sweets ❗', 'Flowers & Dry Fruits ❗']
 
             root_cat_text()
 
@@ -1798,7 +1962,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Plants': ######
 
-            root_cat = ['Flowering Plants', 'Money Plants']
+            root_cat = ['Flowering Plants', 'Air Purifying Plants', 'Lucky Bamboo', 'Money Plants', 'Premium Plants ❗']
 
             root_cat_text()
 
@@ -1811,13 +1975,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Wall Decor', 'Home Decor', 'Kitchen Linen', 'Bathroom Linen', 'Bedroom Linen'])
+        sub = col1.radio('Choose Sub Category :', ['Wall Decor', 'Home Decor', 'Kitchen Linen', 'Bathroom Linen', 'Bedroom Linen', 'Carpets & Rugs', 'Artworks ❗', 'Curtains & Accessories ❗'])
 
 
 
         if sub == 'Wall Decor': ######
 
-            root_cat = ['Wall Decor & Hanging', 'Clocks']
+            root_cat = ['Wall Decor & Hanging', 'Clocks', 'Stickers', 'Mirrors ❗']
 
             root_cat_text()
 
@@ -1828,7 +1992,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Home Decor': ######
 
-            root_cat = ['Alarm Clocks']
+            root_cat = ['Alarm Clocks', 'Cushion Covers', 'Home Fragrance']
 
             root_cat_text()
 
@@ -1839,7 +2003,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Kitchen Linen': ######
 
-            root_cat = ['Oven Gloves', 'Aprons']
+            root_cat = ['Oven Gloves', 'Aprons', 'Table Cloths ❗', 'Table Runners ❗', 'Place Mats ❗']
 
             root_cat_text()
 
@@ -1850,7 +2014,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Bathroom Linen': ######
 
-            root_cat = ['Towel Sets']
+            root_cat = ['Towel Sets', 'Bath Robe ❗', 'Hand Towels ❗', 'Bath Towel ❗', 'Bath Sheets ❗', 'Face Towels ❗', 'Beach Towels ❗', 'Bath Mats & Rugs ❗', 'Bath Slippers ❗', 'Shower Curtains ❗', 'Washcloths ❗']
 
             root_cat_text()
 
@@ -1861,12 +2025,29 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Bedroom Linen': ######
 
-            root_cat = ['Bed Pillows']
+            root_cat = ['Bed Pillows', 'Kids Bedding ❗', 'Pillow Cases ❗', 'Sheets ❗', 'Comforters ❗', 'Duvets & Covers ❗', 'Bedspreads ❗', 'Blankets & Quilts ❗', 'Mattress Toppers ❗', 'Mattress & Pillow Protectors ❗', 'Throws ❗']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i])
+
+        
+
+        if sub == 'Carpets & Rugs': ######
+
+            root_cat = ['Carpets', 'Rugs ❗', 'Door Mats ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+        
+        if sub == 'Artworks ❗' or sub == 'Curtains & Accessories ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -1886,11 +2067,15 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Gaming Mice', 'Gaming Components', 'Gaming Headset', 'Gaming Chairs', 'Gaming Keyboard', 'Controllers-Joysticks & Accessories', 'PS4 Games', 'Gaming Monitors', 'Gaming Consoles', 'Gaming Desktop'])
+        sub = col1.radio('Choose Sub Category :', ['Gaming Mice', 'Gaming Components', 'Gaming Headset', 'Gaming Chairs', 'Gaming Keyboard', 'Controllers-Joysticks & Accessories', 'PS4 Games', 'Xbox One Games', 'PS5 Games', 'Gaming Monitors', 'Gaming Consoles', 'Gaming Desktop', 'Gaming Laptop ❗', 'Gaming Cases ❗', 'PC Games ❗'])
 
-        if sub == 'Gaming Mice' or sub == 'Gaming Components' or sub == 'Gaming Headset' or sub == 'Gaming Chairs' or sub == 'Gaming Keyboard' or sub == 'Controllers-Joysticks & Accessories' or sub == 'PS4 Games' or sub == 'Gaming Monitors' or sub == 'Gaming Consoles' or sub == 'Gaming Desktop': ######
+        if sub == 'Gaming Mice' or sub == 'Gaming Components' or sub == 'Gaming Headset' or sub == 'Gaming Chairs' or sub == 'Gaming Keyboard' or sub == 'Controllers-Joysticks & Accessories' or sub == 'PS4 Games' or sub == 'Xbox One Games' or sub == 'PS5 Games' or sub == 'Gaming Monitors' or sub == 'Gaming Consoles' or sub == 'Gaming Desktop': ######
 
             col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
+
+        elif sub == 'Gaming Laptop ❗' or sub == 'Gaming Cases ❗' or sub == 'PC Games ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -1898,13 +2083,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Vitamins & Supplements', 'Protein', 'Weight Management', 'Herbs & Natural Solutions'])
+        sub = col1.radio('Choose Sub Category :', ['Vitamins & Supplements', 'Protein', 'Weight Management', 'Herbs & Natural Solutions', 'Performance ❗', 'Digestion ❗', 'Super Foods & Green Foods ❗'])
 
 
 
         if sub == 'Vitamins & Supplements': ######
 
-            root_cat = ['Multivitamins', 'Vitamins A-Z', 'Fish Oil & Omegas', 'Nutritional Supplements', 'Specialty Supplements', 'Antioxidants', 'Joint Support']
+            root_cat = ['Multivitamins', 'Vitamins A-Z', 'Fish Oil & Omegas', 'Nutritional Supplements', 'Specialty Supplements', 'Antioxidants', 'Joint Support', 'Wellness Essentials ❗', 'Minerals ❗', 'Blended Vitamin & Mineral Supplements ❗']
 
             root_cat_text()
 
@@ -1915,7 +2100,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Protein': ######
 
-            root_cat = ['Protein Drinks', 'Meal Replacements']
+            root_cat = ['Protein Drinks', 'Meal Replacements', 'Whey Protein ❗', 'Mass Gainers ❗', 'Protein Bars ❗', 'Protein Blends ❗', 'Casein Proteins ❗', 'Plant Based Protein ❗']
 
             root_cat_text()
 
@@ -1926,7 +2111,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Weight Management': ######
 
-            root_cat = ['Fat Burners & Thermogenics']
+            root_cat = ['Fat Burners & Thermogenics', 'Meal Replacements ❗', 'Appetite Control & Diet Support ❗', 'Ketogenic Friendly ❗']
 
             root_cat_text()
 
@@ -1937,12 +2122,18 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Herbs & Natural Solutions': ######
 
-            root_cat = ['Natural Solutions']
+            root_cat = ['Natural Solutions', 'Herbs A-E ❗', 'Herbs F-N ❗', 'Herbs O-S ❗', 'Herbs T-Z ❗']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i])
+
+
+
+        elif sub == 'Performance ❗' or sub == 'Digestion ❗' or sub == 'Super Foods & Green Foods ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -1950,13 +2141,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Bathroom Storage & Organiser', 'Bedroom', 'Storage & Organisation', 'Living Room', 'Kitchen & Dining'])
+        sub = col1.radio('Choose Sub Category :', ['Bathroom Storage & Organiser', 'Bedroom', 'Storage & Organisation', 'Living Room', 'Kitchen & Dining', 'Study Room ❗', 'Home Bar ❗', 'Kitchen & Dining ❗', 'Outdoor Furniture ❗'])
 
 
 
         if sub == 'Bathroom Storage & Organiser': ######
 
-            root_cat = ['Soap Dishes', 'Bath Organizers', 'Toothbrush Holders', 'Toilet Brush Holders', 'Toilet Paper Holders']
+            root_cat = ['Soap Dishes', 'Bath Organizers', 'Toothbrush Holders', 'Toilet Brush Holders', 'Toilet Paper Holders', 'Dispensers', 'Bathroom Trash Bins', 'Tumblers ❗', 'Towel Holders ❗', 'Towel Hooks ❗']
 
             root_cat_text()
 
@@ -1965,10 +2156,9 @@ if menu == "CATEGORY VIEWER":
 
 
 
-
         if sub == 'Bedroom': ######
 
-            root_cat = ['Tv Stand & Media Centers', 'Chest of Drawers']
+            root_cat = ['Tv Stand & Media Centers', 'Chest of Drawers', 'Bedside Tables', 'Beds ❗', 'Mattresses ❗', 'Wardrobes ❗', 'Dressing Tables ❗']
 
             root_cat_text()
 
@@ -1979,7 +2169,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Storage & Organisation': ######
 
-            root_cat = ['Ironing Boards', 'Racks Shelves & Drawers']
+            root_cat = ['Ironing Boards', 'Racks Shelves & Drawers', 'Cabinet Organizers & Storage Baskets', 'Laundry Storage ❗', 'Clothing & Closet Storage ❗', 'Storage Containers ❗']
 
             root_cat_text()
 
@@ -1990,7 +2180,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Living Room': ######
 
-            root_cat = ['Center Tables']
+            root_cat = ['Center Tables', 'Chairs', 'Side Tables ❗', 'Sofa Beds ❗', 'Sofa Sets ❗', 'L-Shaped Sofas ❗', 'Recliners ❗', 'TV & Entertainment Units ❗', 'Nested Tables ❗', 'Bean Bags ❗', 'Shoe Racks ❗', 'Wall Shelves ❗', 'Magazine Racks ❗', 'Footstools ❗']
 
             root_cat_text()
 
@@ -1999,14 +2189,9 @@ if menu == "CATEGORY VIEWER":
 
 
 
-        if sub == 'Kitchen & Dining': ######
+        if sub == 'Study Room ❗' or sub ==  'Home Bar ❗' or sub ==  'Kitchen & Dining ❗' or sub == 'Outdoor Furniture ❗': ######
 
-            root_cat = ['Kitchen Cabinets']
-
-            root_cat_text()
-
-            for i in range(len(root_cat)):
-                col4.write(root_cat[i])
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -2026,7 +2211,7 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Functional Lighting', 'Electricals', 'Safes & Security'])
+        sub = col1.radio('Choose Sub Category :', ['Functional Lighting', 'Electricals', 'Safes & Security', 'Fixtures', 'Bathroom & Kitchen Fixtures ❗', 'Door Locks & Hardware ❗', 'Patio Lawn & Garden ❗'])
 
 
 
@@ -2063,11 +2248,28 @@ if menu == "CATEGORY VIEWER":
 
 
 
+        if sub == 'Fixtures': ######
+
+            root_cat = ['']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Bathroom & Kitchen Fixtures ❗' or sub == 'Door Locks & Hardware ❗' or sub == 'Patio Lawn & Garden ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
+
+
+
     if main == 'School Essential': ######
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Backpack & Storages', 'Calculator'])
+        sub = col1.radio('Choose Sub Category :', ['Backpack & Storages', 'Calculator', 'Writing Instruments ❗', 'Cutting & Measuring ❗', 'Art & Crafts ❗'])
 
 
 
@@ -2084,12 +2286,18 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Calculator': ######
 
-            root_cat = ['Scientific Calculator']
+            root_cat = ['Scientific Calculator', 'Basic Calculator ❗', 'Graphing Calculator ❗']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i])
+
+
+
+        if sub == 'Writing Instruments ❗' or sub == 'Cutting & Measuring ❗' or sub == 'Art & Crafts ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
@@ -2103,7 +2311,7 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Batelco': ######
 
-            root_cat = ['Mobile & Data', 'Home Broadband']
+            root_cat = ['Mobile & Data', 'Home Broadband', 'Postpaid Plans', 'Mobile Broadband']
 
             root_cat_text()
 
@@ -2116,13 +2324,13 @@ if menu == "CATEGORY VIEWER":
 
         sub_cat_text()
 
-        sub = col1.radio('Choose Sub Category :', ['Cat Food', 'Cat Care & Accessories', 'Dog Care & Accessories', 'Dog Food'])
+        sub = col1.radio('Choose Sub Category :', ['Cat Food', 'Cat Care & Accessories', 'Dog Care & Accessories', 'Dog Food', 'Fish Food & Accessories ❗'])
 
 
 
         if sub == 'Cat Food': ######
 
-            root_cat = ['Dry Cat Food Adult', 'Wet Cat Food']
+            root_cat = ['Dry Cat Food Adult', 'Wet Cat Food', 'Dry Food Kitten', 'Cat Treats']
 
             root_cat_text()
 
@@ -2133,28 +2341,40 @@ if menu == "CATEGORY VIEWER":
 
         if sub == 'Cat Care & Accessories': ######
 
-            if sub == 'Cat Care & Accessories': ######
-                
-                col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
-
-
-
-        if sub == 'Dog Care & Accessories': ######
-
-            if sub == 'Dog Care & Accessories': ######
-                
-                col4.info('CURRENTLY, THERE ARE NO ROOT-CATEGORIES FOR THE SELECTED SUB-CATEGORY')
-
-
-
-        if sub == 'Dog Food': ######
-
-            root_cat = ['Dog Treats & Chews']
+            root_cat = ['Cat Grooming Supplies', 'Cat Litter & Accessories', 'Cat Vitamins & Supplements', 'Cat Scratcher & Furniture', 'Cat Toys', 'Cat Microchips', 'Cat Odor Removers & Cleaning', 'Cat Collar Leashes & Harness', 'Cat Parasites Control', 'Cat Feeding Accessories & Bowls', 'Cat Carriers & Crates', 'Cat Beds', 'Cat Travel Essentials']
 
             root_cat_text()
 
             for i in range(len(root_cat)):
                 col4.write(root_cat[i])
+
+
+
+        if sub == 'Dog Care & Accessories': ######
+
+            root_cat = ['Dog Feeding Accessories & Bowls', 'Dog Litter Accessories', 'Dog Odor Removers & Cleaning', 'Dog Toys', 'Dog Microchips', 'Dog Collar Leashes & Harness', 'Dog Carriers & Crates', 'Dog Beds', 'Dog Vitamins & Supplies ❗', 'Dog Grooming Supplies ❗', 'Dog Parasites Control ❗', 'Dog Travel Essentials ❗']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Dog Food': ######
+
+            root_cat = ['Dog Treats & Chews', 'Wet Dog Food', 'Dry Food Puppy', 'Dry Food Adult']
+
+            root_cat_text()
+
+            for i in range(len(root_cat)):
+                col4.write(root_cat[i])
+
+
+
+        if sub == 'Fish Food & Accessories ❗': ######
+
+            col4.warning('CURRENTLY, THIS SUB-CATEGORY IS DISABLED')
 
 
 
