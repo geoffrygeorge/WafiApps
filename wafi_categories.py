@@ -23,7 +23,7 @@ st.set_page_config(
 st.sidebar.title("NAVIGATION")
 
 # defining various pages in the application
-main_menu = ['INTRO', 'CATEGORY VIEWER', 'VENDOR LIST']
+main_menu = ['INTRO', 'CATEGORY VIEWER']
 
 with st.container():
 
