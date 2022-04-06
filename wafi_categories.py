@@ -5,7 +5,7 @@ from PIL import Image
 # INITIAL PAGE LAYOUT SETTINGS
 favicon_img = Image.open("images/wafi_favicon.ico")
 st.set_page_config(
-        page_title = "WafiApps Categories",
+        page_title = "WafiApps",
         initial_sidebar_state = "auto",
         page_icon = favicon_img,
         layout = "centered"
@@ -26,7 +26,7 @@ main_menu = ['INTRO', 'CATEGORY VIEWER']
 
 with st.container():
 
-    menu = st.sidebar.selectbox('Go to', main_menu) 
+    menu = st.sidebar.selectbox('Go to', main_menu)
 
 
 
@@ -37,9 +37,9 @@ if menu == "INTRO":
 
     st.image(sidebar_img, use_column_width = True, output_format = 'PNG')
 
-    #lottie_local_path = "lottie_files/shopping_lottie.json"
-    lottie_url = "https://assets3.lottiefiles.com/packages/lf20_57TxAX.json"
-    lottie_sidebar = utils.intro_lottie(lottie_url)
+    #LOTTIE_LOCAL_PATH = "lottie_files/shopping_lottie.json"
+    LOTTIE_URL = "https://assets3.lottiefiles.com/packages/lf20_57TxAX.json"
+    lottie_sidebar = utils.intro_lottie(LOTTIE_URL)
     st_lottie(lottie_sidebar, height = 375, renderer = "svg")
 
 
@@ -196,7 +196,7 @@ if menu == "CATEGORY VIEWER":
 
         pet_supplies.petsupplies_main()
 
-       
+
 
 
 #### CATEGORY VIEWER ####
