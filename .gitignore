@@ -1,5 +1,6 @@
 # ignoring _pycache_
-#__pycache__
+__pycache__
+categories_main/__pycache__/
 
 #https://github.com/microsoft/vscode/issues/94835
 .vscode
