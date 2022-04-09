@@ -15,7 +15,7 @@ from streamlit_lottie import st_lottie
 import main_categories
 import utils
 from categories_main import supermarket, watches, appliances, kitchen_dining, health_beauty, electronics, computers_it, tools_diy, office_supplies, mobiles_tablets, toys_games, perfumes_fragrances, fashion, luggage_travelgear, pharmacy, baby_care, cakes_flowers, home_decor, musical_instruments, gaming_consoles, diet_nutrition, furniture_storage, automotive, home_improvement, school_essential, telecom, pet_supplies
-# from vendor_portal import vendor_viewer
+from vendor_portal import vendor_authentication
 
 utils.hide_anchor_link()
 
@@ -23,7 +23,7 @@ utils.hide_anchor_link()
 st.sidebar.title("NAVIGATION")
 
 # defining various pages in the application
-main_menu = ['INTRO', 'CATEGORY VIEWER']
+main_menu = ['INTRO', 'CATEGORY VIEWER', 'VENDOR PORTAL']
 
 with st.container():
 
@@ -202,9 +202,4 @@ if menu == "CATEGORY VIEWER":
 
 #### CATEGORY VIEWER ####
 if menu == "VENDOR PORTAL":
-
-    utils.main_heading_text_vendor()
-
-    utils.break_loop_vendor_viewer()
-    
-    vendor_viewer.vendor_viewer_main()
+    vendor_authentication.authenticate()
