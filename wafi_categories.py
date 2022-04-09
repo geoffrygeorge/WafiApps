@@ -15,7 +15,7 @@ from streamlit_lottie import st_lottie
 import main_categories
 import utils
 from categories_main import supermarket, watches, appliances, kitchen_dining, health_beauty, electronics, computers_it, tools_diy, office_supplies, mobiles_tablets, toys_games, perfumes_fragrances, fashion, luggage_travelgear, pharmacy, baby_care, cakes_flowers, home_decor, musical_instruments, gaming_consoles, diet_nutrition, furniture_storage, automotive, home_improvement, school_essential, telecom, pet_supplies
-from vendor_portal import vendor_viewer
+# from vendor_portal import vendor_viewer
 
 utils.hide_anchor_link()
 
