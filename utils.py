@@ -55,6 +55,12 @@ def break_loop_vendor_viewer():
         st.markdown('<p></p>', unsafe_allow_html = True)
         i += 1
 
+def break_loop_vendor_divider():
+    i = 0
+    while i < 4:
+        st.markdown('<p></p>', unsafe_allow_html = True)
+        i += 1
+
 # not a long term solution
 def hide_anchor_link():
     st.markdown("""
