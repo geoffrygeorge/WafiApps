@@ -23,8 +23,8 @@ def vendor_viewer_main():
     st.title('VENDOR IMFORMATION:')
 
     with st.spinner(text = "Please Wait"):
-
-                time.sleep(0.5)
+        
+        time.sleep(0.5)
 
     # to get name
     vendor_name = vendor_df['Vendor Name'].loc[vendor_df['Vendor Name'] == vendor]
