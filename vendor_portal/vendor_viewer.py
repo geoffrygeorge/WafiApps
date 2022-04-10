@@ -37,8 +37,8 @@ def vendor_viewer_main():
 
     if shop_status_choice == 'Enabled & Disabled':
 
-        with st.expander('Dataframe'):
-            st.dataframe(all_vendor_df)
+        # with st.expander('Dataframe'):
+        #    st.dataframe(all_vendor_df)
 
         with st.sidebar.expander('VENDOR LIST', expanded = True):
             vendor = st.radio('Choose Vendor :', all_vendor_list)
@@ -91,25 +91,43 @@ def vendor_viewer_main():
             st.subheader('Vendor Shop Status:')
             st.text(' '.join(vendor_shop_status))
 
-        utils.break_loop_vendor_viewer()
+        utils.break_loop_vendor_divider()
 
         st.header('COMMISSION RATE & CATEGORIES:')
 
         st.subheader('Commission Status:')
         st.text(' '.join(vendor_commission_status))
         break_loop()
-        
-        st.subheader('Commission Categories')
-        vendor_categories = vendor_categories.reset_index(drop=True)
-        st.dataframe(vendor_categories)
+
+        st.subheader('Vendor Categories:')
+
+        vendor_categories = vendor_categories.columns.to_frame().T.append(vendor_categories, ignore_index=True)
+        vendor_categories.columns = range(len(vendor_categories.columns))
+
+        vendor_categories = vendor_categories.transpose()
+        vendor_categories = pd.DataFrame(vendor_categories)
+
+        if vendor_categories.empty is False:
+
+            utils.hide_row_column_indices()
+
+            st.table(vendor_categories)
+
+        elif vendor_categories.empty is True:
+
+            st.info('There are no categories associated with this vendor')
+
+            utils.hide_row_column_indices()
+
+            st.table(vendor_categories)
 
 
 
 
     if shop_status_choice == 'Enabled':
 
-        with st.expander('Dataframe'):
-            st.dataframe(vendor_enabled_df)
+        # with st.expander('Dataframe'):
+        #     st.dataframe(vendor_enabled_df)
 
         with st.sidebar.expander('VENDOR LIST', expanded = True):
             vendor = st.radio('Choose Vendor :', vendor_enabled_list)
@@ -162,7 +180,7 @@ def vendor_viewer_main():
             st.subheader('Vendor Shop Status:')
             st.text(' '.join(vendor_shop_status))
 
-        utils.break_loop_vendor_viewer()
+        utils.break_loop_vendor_divider()
 
         st.header('COMMISSION RATE & CATEGORIES:')
 
@@ -170,17 +188,33 @@ def vendor_viewer_main():
         st.text(' '.join(vendor_commission_status))
         break_loop()
         
-        st.subheader('Commission Categories')
-        vendor_categories = vendor_categories.reset_index(drop=True)
-        st.dataframe(vendor_categories)
+        st.subheader('Vendor Categories:')
 
+        vendor_categories = vendor_categories.columns.to_frame().T.append(vendor_categories, ignore_index=True)
+        vendor_categories.columns = range(len(vendor_categories.columns))
 
+        vendor_categories = vendor_categories.transpose()
+        vendor_categories = pd.DataFrame(vendor_categories)
+
+        if vendor_categories.empty is False:
+
+            utils.hide_row_column_indices()
+
+            st.table(vendor_categories)
+
+        elif vendor_categories.empty is True:
+
+            st.info('There are no categories associated with this vendor')
+
+            utils.hide_row_column_indices()
+
+            st.table(vendor_categories)
 
 
     if shop_status_choice == 'Disabled':
 
-        with st.expander('Dataframe'):
-            st.dataframe(vendor_disabled_df)
+        # with st.expander('Dataframe'):
+        #    st.dataframe(vendor_disabled_df)
 
         with st.sidebar.expander('VENDOR LIST', expanded = True):
             vendor = st.radio('Choose Vendor :', vendor_disabled_list)
@@ -233,7 +267,7 @@ def vendor_viewer_main():
             st.subheader('Vendor Shop Status:')
             st.text(' '.join(vendor_shop_status))
 
-        utils.break_loop_vendor_viewer()
+        utils.break_loop_vendor_divider()
 
         st.header('COMMISSION RATE & CATEGORIES:')
 
@@ -241,6 +275,24 @@ def vendor_viewer_main():
         st.text(' '.join(vendor_commission_status))
         break_loop()
         
-        st.subheader('Commission Categories')
-        vendor_categories = vendor_categories.reset_index(drop=True)
-        st.dataframe(vendor_categories)
+        st.subheader('Vendor Categories:')
+
+        vendor_categories = vendor_categories.columns.to_frame().T.append(vendor_categories, ignore_index=True)
+        vendor_categories.columns = range(len(vendor_categories.columns))
+
+        vendor_categories = vendor_categories.transpose()
+        vendor_categories = pd.DataFrame(vendor_categories)
+
+        if vendor_categories.empty is False:
+
+            utils.hide_row_column_indices()
+
+            st.table(vendor_categories)
+
+        elif vendor_categories.empty is True:
+
+            st.info('There are no categories associated with this vendor')
+
+            utils.hide_row_column_indices()
+
+            st.table(vendor_categories)
