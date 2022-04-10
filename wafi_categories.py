@@ -34,9 +34,9 @@ with st.container():
 #### INTRO ####
 if menu == "INTRO":
 
-    sidebar_img = Image.open("images/wafi_logo_text.png")
+    main_img = Image.open("images/wafi_logo_text.png")
 
-    st.image(sidebar_img, use_column_width = True, output_format = 'PNG')
+    st.image(main_img, use_column_width = True, output_format = 'PNG')
 
     #LOTTIE_LOCAL_PATH = "lottie_files/shopping_lottie.json"
     LOTTIE_URL = "https://assets3.lottiefiles.com/packages/lf20_57TxAX.json"
