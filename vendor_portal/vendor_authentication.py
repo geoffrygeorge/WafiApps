@@ -4,8 +4,7 @@ from vendor_portal import vendor_viewer
 
 def authenticate():
     def is_authenticated(password):
-        return password == "admin"
-        #WD2qj&VAUTJ9f%m
+        return password == "WD2qj&VAUTJ9f%m"
 
 
     def generate_login_block():
