@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
+import time
 
 def vendor_viewer_main():
 
     def break_loop():
         i = 0
-        while i < 10:
+        while i < 5:
             st.markdown('<p></p>', unsafe_allow_html = True)
             i += 1
     
@@ -17,8 +17,14 @@ def vendor_viewer_main():
     vendor_df = vendor_df.drop('Disapproval Reason', axis = 1)
     vendor_list = vendor_df['Vendor Name'].unique().tolist()
 
-    with st.sidebar.expander('Vendor List', expanded = True):
+    with st.sidebar.expander('VENDOR LIST', expanded = True):
         vendor = st.radio('Choose Vendor :', vendor_list)
+
+    st.title('VENDOR IMFORMATION :')
+
+    with st.spinner(text = "Please Wait"):
+
+                time.sleep(0.5)
 
     # to get name
     vendor_name = vendor_df['Vendor Name'].loc[vendor_df['Vendor Name'] == vendor]
@@ -36,9 +42,8 @@ def vendor_viewer_main():
     vendor_shop_status = vendor_df['Vendor Shop Status'].loc[vendor_df['Vendor Name'] == vendor]
     vendor_shop_status = vendor_shop_status.tolist()
 
-    #with st.expander('Dataframe'):
+    # with st.expander('Dataframe'):
     #    st.dataframe(vendor_df)
-
 
     col1, col2, col3, col4 = st.columns([8,1,1,4])
 
