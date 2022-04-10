@@ -2,37 +2,37 @@
 import pandas as pd
 
 def main_categories():
-  
+ 
     """defining function for main categories"""
 
     cat_list = [
-        'Supermarket',
-        'Watches',
-        'Appliances',
-        'Kitchen & Dining',
-        'Health & Beauty',
         'Electronics',
         'Computers & IT',
-        'Tools & DIY',
-        'Office Supplies',
         'Mobiles & Tablets',
-        'Toys & Games',
         'Perfumes & Fragrances',
+        'Appliances',
+        'Toys & Games',
         'Fashion',
-        'Luggage & Travel Gear',
-        'Pharmacy',
+        'Health & Beauty',
+        'Luggage & Travel',
         'Baby Care',
+        'Tools & DIY',
+        'Supermarket',
+        'Pet Supplies',
+        'Telecom',
         'Cakes & Flowers',
-        'Home Decor & Furnishing',
+        'Office Supplies',
+        'Diet & Nutrition',
+        'Pharmacy',
+        'Automotive',
         'Musical Instruments',
         'Gaming & Consoles',
-        'Diet & Nutrition',
-        'Furniture & Storage',
-        'Automotive',
-        'Home Improvement & Lighting',
+        'Watches',
         'School Essential',
-        'Telecom',
-        'Pet Supplies'
+        'Kitchen & Dining',
+        'Home Decor & Furnishing',
+        'Home Improvement & Lighting',
+        'Furniture & Storage'
         ]
 
     list_df = pd.DataFrame(cat_list, columns = ['category_list'])
