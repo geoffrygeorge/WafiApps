@@ -61,3 +61,16 @@ def hide_anchor_link():
         .css-15zrgzn {display: none}
         </style>
         """, unsafe_allow_html=True)
+
+def hide_row_column_indices():
+    # CSS to inject contained in a string
+    hide_table_row_index = """
+                <style>
+                thead {display:none}
+                tbody th {display:none}
+                .blank {display:none}
+                </style>
+                """
+
+    # Inject CSS with Markdown
+    st.markdown(hide_table_row_index, unsafe_allow_html=True)
