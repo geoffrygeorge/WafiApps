@@ -14,7 +14,7 @@ def main_categories():
         'Toys & Games',
         'Fashion',
         'Health & Beauty',
-        'Luggage & Travel',
+        'Luggage & Travel Gear',
         'Baby Care',
         'Tools & DIY',
         'Supermarket',
