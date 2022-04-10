@@ -51,7 +51,7 @@ def intro_lottie(url: str):
 
 def break_loop_vendor_viewer():
     i = 0
-    while i < 5:
+    while i < 1:
         st.markdown('<p></p>', unsafe_allow_html = True)
         i += 1
 
