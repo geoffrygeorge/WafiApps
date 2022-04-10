@@ -20,7 +20,7 @@ def vendor_viewer_main():
     with st.sidebar.expander('VENDOR LIST', expanded = True):
         vendor = st.radio('Choose Vendor :', vendor_list)
 
-    st.title('VENDOR IMFORMATION :')
+    st.title('VENDOR IMFORMATION:')
 
     with st.spinner(text = "Please Wait"):
 
