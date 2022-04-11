@@ -61,11 +61,12 @@ def break_loop_vendor_divider():
         st.markdown('<p></p>', unsafe_allow_html = True)
         i += 1
 
-# not a long term solution
 def hide_anchor_link():
     st.markdown("""
         <style>
         .css-15zrgzn {display: none}
+        .css-eczf16 {display: none}
+        .css-jn99sy {display: none}
         </style>
         """, unsafe_allow_html=True)
 
