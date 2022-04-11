@@ -20,7 +20,9 @@ def vendor_viewer_main():
     all_vendor_df = pd.read_csv('data/vendors.csv')
     all_vendor_df = all_vendor_df.sort_values(by = ['Vendor Name'])
     all_vendor_df = all_vendor_df.reset_index(drop=True)
-    all_vendor_df = all_vendor_df.drop(['Disapproval Reason', 'Vendor Status'], axis = 1)
+    all_vendor_df = all_vendor_df.drop(['Disapproval Reason'], axis = 1)
+    all_vendor_df = all_vendor_df[all_vendor_df['Vendor Status'] != 'New']
+    all_vendor_df = all_vendor_df[all_vendor_df['Vendor Name'] != 'Ambily Anil']
     vendor_enabled_df = all_vendor_df[all_vendor_df['Vendor Shop Status'] == 'Enabled']
     vendor_disabled_df = all_vendor_df[all_vendor_df['Vendor Shop Status'] == 'Disabled']
 
