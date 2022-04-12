@@ -28,16 +28,19 @@ def vendor_viewer_main():
 
     # creating lists
     all_vendor_list = all_vendor_df['Vendor Name'].unique().tolist()
+    length_all = len(all_vendor_list)
     vendor_enabled_list = vendor_enabled_df['Vendor Name'].unique().tolist()
+    length_enabled = len(vendor_enabled_list)
     vendor_disabled_list = vendor_disabled_df['Vendor Name'].unique().tolist()
+    length_disabled = len(vendor_disabled_list)
 
     # vendor shop status filter
     st.sidebar.title('FILTER (BY SHOP STATUS)')
-    shop_status_choice = st.sidebar.selectbox('Vendor Shop Status', options = ['Enabled & Disabled', 'Enabled', 'Disabled'])
+    shop_status_choice = st.sidebar.selectbox('Vendor Shop Status', options = ['Enabled & Disabled - {}'.format(length_all), 'Enabled - {}'.format(length_enabled), 'Disabled - {}'.format(length_disabled)])
 
 
 
-    if shop_status_choice == 'Enabled & Disabled':
+    if shop_status_choice == 'Enabled & Disabled - {}'.format(length_all):
 
         # with st.expander('Dataframe'):
         #    st.dataframe(all_vendor_df)
@@ -126,7 +129,7 @@ def vendor_viewer_main():
 
 
 
-    if shop_status_choice == 'Enabled':
+    if shop_status_choice == 'Enabled - {}'.format(length_enabled):
 
         # with st.expander('Dataframe'):
         #     st.dataframe(vendor_enabled_df)
@@ -213,7 +216,7 @@ def vendor_viewer_main():
             st.table(vendor_categories)
 
 
-    if shop_status_choice == 'Disabled':
+    if shop_status_choice == 'Disabled - {}'.format(length_disabled):
 
         # with st.expander('Dataframe'):
         #    st.dataframe(vendor_disabled_df)
